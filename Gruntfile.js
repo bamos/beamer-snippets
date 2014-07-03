@@ -16,8 +16,16 @@ module.exports = function(grunt) {
           branch: 'gh-pages'
         }
       }
+    },
+    shell: {
+      generate: {
+        command: "python3 generate.py"
+      }
     }
   });
   grunt.loadNpmTasks('grunt-build-control');
+  grunt.loadNpmTasks('grunt-shell');
+
+  grunt.registerTask('generate', ['shell:generate']);
   grunt.registerTask('deploy', ['buildcontrol:pages']);
 }
