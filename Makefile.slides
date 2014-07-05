@@ -1,0 +1,7 @@
+SRC=$(wildcard *.tex)
+PDF=$(SRC:.tex=.pdf)
+
+all: $(PDF)
+
+%.pdf: %.tex
+	pdflatex --halt-on-error $<
