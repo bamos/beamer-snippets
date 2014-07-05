@@ -1,0 +1,13 @@
+<html>
+<head><title>Beamer Snippets</title></head>
+<body>
+{% for snippet in snippets -%}
+  <h2>{{snippet['fname']}}</h2>
+  <!-- TODO: Use PNG rather than PDF. -->
+  <embed src="./{{snippet['pdf']}}" width="100%" height="700">
+  <pre>
+{{snippet['content']}}
+  </pre>
+{%- endfor %}
+</body>
+</html>
