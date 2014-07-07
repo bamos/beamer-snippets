@@ -4,6 +4,9 @@ import os
 import shutil
 
 from jinja2 import Environment,FileSystemLoader
+from pygments import highlight
+from pygments.lexers import TexLexer
+from pygments.formatters import HtmlFormatter
 from subprocess import Popen,PIPE
 
 env = Environment(loader=FileSystemLoader("tmpl"))
@@ -37,7 +40,7 @@ for subdir, dirs, files in os.walk(snippets_dir):
           'fname': trimmedName,
           'pdf': gen_pdf_name,
           'png': gen_png_name,
-          'content': snippet_content
+          'content': highlight(snippet_content, TexLexer(), HtmlFormatter())
         })
 
 p = Popen(['make', "-f", "../../Makefile.slides", "-C",

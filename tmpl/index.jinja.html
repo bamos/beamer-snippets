@@ -3,11 +3,15 @@
 {% block content %}
 {% for snippet in snippets -%}
   <h2>{{snippet['fname']}}</h2>
-  <center>
-    <img src="./{{snippet['png']}}" width="50%"></img>
-  </center>
-  <pre>
-{{- snippet['content'] -}}
-  </pre>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src="./{{snippet['png']}}" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        {{ snippet['content'] }}
+      </div>
+    </div>
+  </div>
 {%- endfor %}
 {% endblock %}
