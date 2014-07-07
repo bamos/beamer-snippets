@@ -1,1 +1,168 @@
-<html><body>Hi.</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Beamer Snippets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <style type="text/css">
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+  </style>
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle"
+            data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Beamer Snippets</a>
+      </div>
+      <!-- <div class="collapse navbar-collapse"> -->
+      <!--   <ul class="nav navbar-nav"> -->
+      <!--     <li class="active"><a href="#">Home</a></li> -->
+      <!--     <li><a href="#about">About</a></li> -->
+      <!--   </ul> -->
+      <!-- </div> -->
+    </div>
+  </div>
+
+  
+<h2>deploying</h2>
+  <center>
+    <img src=".//gen_snippets/deploying.png" width="50%"></img>
+  </center>
+  <pre>
+\frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
+  \scalebox{0.7}{
+  \begin{tikzpicture}
+    \draw[fill=gray!20] (-1.7cm,-1.1cm) rectangle (3.9cm,1.3cm) {};
+    \node[bn] (config) {Configuration.};
+    \node[on,right=0.5cm of config] (fabric) {Fabric};
+    \node at (0cm,1cm) () {Client Computer};
+    \draw[to] (config) -- (fabric);
+
+    \draw[fill=gray!20] (6cm,-1.1cm) rectangle (12cm,1.3cm) {};
+    \node[greenn] (m) at (7.0cm,0cm) {Master};
+    \node[yn,right=0.2cm of m] (w1) {Worker};
+    \node[yn,right=0.2cm of w1] (w2) {Worker};
+    \node at (10.9cm,1cm) {Cluster};
+
+    \node at (5.4cm,1.7cm) {Provision and start the master.};
+    \draw[to] (fabric) edge [bend left] (m);
+  \end{tikzpicture}
+  }
+}
+
+  </pre><h2>overlayed-images</h2>
+  <center>
+    <img src=".//gen_snippets/overlayed-images.png" width="50%"></img>
+  </center>
+  <pre>
+\frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
+  \begin{tikzpicture}[
+    every node/.style={draw,line width=2pt,inner sep=0,outer sep=0}]
+\node at (0,0) () {\includegraphics[draft,width=0.9\textwidth,height=5cm]{a.png}};
+\node at (1.5,-2.5) () {\includegraphics[draft,width=0.4\textwidth,height=2cm]{b.png}};
+\node at (4,0.5) () {\includegraphics[draft,width=0.3\textwidth,height=5cm]{c.png}};
+  \end{tikzpicture}
+}
+
+  </pre><h2>two-column</h2>
+  <center>
+    <img src=".//gen_snippets/two-column.png" width="50%"></img>
+  </center>
+  <pre>
+\frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
+  \begin{minipage}{0.45\textwidth}
+    {\bf First Column}
+    \footnotesize
+    \begin{itemize}
+      \item Lorem ipsum dolor sit amet.
+      \item Consectetuer adipiscing elit.
+      \item Aenean commodo ligula eget dolor.
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    {\bf Second Column}
+    \footnotesize
+    \begin{itemize}
+      \item Lorem ipsum dolor sit amet.
+      \item Consectetuer adipiscing elit.
+      \item Aenean commodo ligula eget dolor.
+    \end{itemize}
+  \end{minipage}
+}
+
+  </pre><h2>two-tables-with-arrow</h2>
+  <center>
+    <img src=".//gen_snippets/two-tables-with-arrow.png" width="50%"></img>
+  </center>
+  <pre>
+\frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
+  Event A $\rightarrow$ Event B $\rightarrow$ Event C \\
+  \begin{tikzpicture}
+    \node[] (n1) {
+      \begin{tabular}{cc}
+        Lorem & ipsum \\
+        dolor & sit \\
+        amet. & Consectetuer \\
+        adipiscing & elit.
+      \end{tabular}
+    };
+
+    \node[right=2cm of n1] (n2) {
+      \begin{tabular}{cc}
+        Aenean & commodo \\
+        ligula & eget \\
+        dolor. &
+      \end{tabular}
+    };
+    \draw[to] (n1) -- node[midway,above]{Event C} (n2);
+  \end{tikzpicture}
+}
+
+  </pre>
+
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <div id="footer">
+    <center>
+      Crafted by <a href="http://bamos.io/about">Brandon Amos</a>. |
+      <a href="http://github.com/bamos/beamer-snippets">Open-sourced on GitHub</a>. |
+      <div class="fb-share-button" id='fb-share'
+        data-href="replaced-by-js" data-type="button"></div>
+    </center>
+  </div>
+  <div id="fb-root"></div>
+  <script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+document.getElementById('fb-share').setAttribute('href', window.location);
+  </script>
+</body>
+</html>
