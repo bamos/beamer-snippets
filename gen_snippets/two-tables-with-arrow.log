@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.18)  7 JUL 2014 15:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.18)  7 JUL 2014 15:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1173,12 +1173,12 @@ LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <4> not available
 \tf@snm=\write8
 \openout8 = `two-tables-with-arrow.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 92.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 92.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
 
 (./two-tables-with-arrow.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 92.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 92.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 
 
 Package rerunfilecheck Warning: File `two-tables-with-arrow.out' has changed.
@@ -1192,7 +1192,7 @@ Package rerunfilecheck Info: Checksums for `two-tables-with-arrow.out':
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 92.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
  ) 
 Here is how much of TeX's memory you used:
  21560 strings out of 493315

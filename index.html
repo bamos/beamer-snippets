@@ -8,6 +8,7 @@
   <meta name="author" content="">
 
   <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/pygments.css" rel="stylesheet">
   <style type="text/css">
 body {
   padding-top: 60px;
@@ -46,100 +47,120 @@ body {
 
   
 <h2>deploying</h2>
-  <center>
-    <img src=".//gen_snippets/deploying.png" width="50%"></img>
-  </center>
-  <pre>
-\frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
-  \scalebox{0.7}{
-  \begin{tikzpicture}
-    \draw[fill=gray!20] (-1.7cm,-1.1cm) rectangle (3.9cm,1.3cm) {};
-    \node[bn] (config) {Configuration.};
-    \node[on,right=0.5cm of config] (fabric) {Fabric};
-    \node at (0cm,1cm) () {Client Computer};
-    \draw[to] (config) -- (fabric);
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/deploying.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\scalebox</span><span class="nb">{</span>0.7<span class="nb">}{</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\draw</span><span class="na">[fill=gray!20]</span> (-1.7cm,-1.1cm) rectangle (3.9cm,1.3cm) <span class="nb">{}</span>;
+    <span class="k">\node</span><span class="na">[bn]</span> (config) <span class="nb">{</span>Configuration.<span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[on,right=0.5cm of config]</span> (fabric) <span class="nb">{</span>Fabric<span class="nb">}</span>;
+    <span class="k">\node</span> at (0cm,1cm) () <span class="nb">{</span>Client Computer<span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (config) -- (fabric);
 
-    \draw[fill=gray!20] (6cm,-1.1cm) rectangle (12cm,1.3cm) {};
-    \node[greenn] (m) at (7.0cm,0cm) {Master};
-    \node[yn,right=0.2cm of m] (w1) {Worker};
-    \node[yn,right=0.2cm of w1] (w2) {Worker};
-    \node at (10.9cm,1cm) {Cluster};
+    <span class="k">\draw</span><span class="na">[fill=gray!20]</span> (6cm,-1.1cm) rectangle (12cm,1.3cm) <span class="nb">{}</span>;
+    <span class="k">\node</span><span class="na">[greenn]</span> (m) at (7.0cm,0cm) <span class="nb">{</span>Master<span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[yn,right=0.2cm of m]</span> (w1) <span class="nb">{</span>Worker<span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[yn,right=0.2cm of w1]</span> (w2) <span class="nb">{</span>Worker<span class="nb">}</span>;
+    <span class="k">\node</span> at (10.9cm,1cm) <span class="nb">{</span>Cluster<span class="nb">}</span>;
 
-    \node at (5.4cm,1.7cm) {Provision and start the master.};
-    \draw[to] (fabric) edge [bend left] (m);
-  \end{tikzpicture}
-  }
-}
+    <span class="k">\node</span> at (5.4cm,1.7cm) <span class="nb">{</span>Provision and start the master.<span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (fabric) edge [bend left] (m);
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+  <span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
 
-  </pre><h2>overlayed-images</h2>
-  <center>
-    <img src=".//gen_snippets/overlayed-images.png" width="50%"></img>
-  </center>
-  <pre>
-\frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
-  \begin{tikzpicture}[
-    every node/.style={draw,line width=2pt,inner sep=0,outer sep=0}]
-\node at (0,0) () {\includegraphics[draft,width=0.9\textwidth,height=5cm]{a.png}};
-\node at (1.5,-2.5) () {\includegraphics[draft,width=0.4\textwidth,height=2cm]{b.png}};
-\node at (4,0.5) () {\includegraphics[draft,width=0.3\textwidth,height=5cm]{c.png}};
-  \end{tikzpicture}
-}
+      </div>
+    </div>
+  </div><h2>overlayed-images</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/overlayed-images.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[
+    every node/.style=<span class="nb">{</span>draw,line width=2pt,inner sep=0,outer sep=0<span class="nb">}</span>]
+<span class="k">\node</span> at (0,0) () <span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[draft,width=0.9\textwidth,height=5cm]</span><span class="nb">{</span>a.png<span class="nb">}}</span>;
+<span class="k">\node</span> at (1.5,-2.5) () <span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[draft,width=0.4\textwidth,height=2cm]</span><span class="nb">{</span>b.png<span class="nb">}}</span>;
+<span class="k">\node</span> at (4,0.5) () <span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[draft,width=0.3\textwidth,height=5cm]</span><span class="nb">{</span>c.png<span class="nb">}}</span>;
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
 
-  </pre><h2>two-column</h2>
-  <center>
-    <img src=".//gen_snippets/two-column.png" width="50%"></img>
-  </center>
-  <pre>
-\frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
-  \begin{minipage}{0.45\textwidth}
-    {\bf First Column}
-    \footnotesize
-    \begin{itemize}
-      \item Lorem ipsum dolor sit amet.
-      \item Consectetuer adipiscing elit.
-      \item Aenean commodo ligula eget dolor.
-    \end{itemize}
-  \end{minipage}
-  \begin{minipage}{0.45\textwidth}
-    {\bf Second Column}
-    \footnotesize
-    \begin{itemize}
-      \item Lorem ipsum dolor sit amet.
-      \item Consectetuer adipiscing elit.
-      \item Aenean commodo ligula eget dolor.
-    \end{itemize}
-  \end{minipage}
-}
+      </div>
+    </div>
+  </div><h2>two-column</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/two-column.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>minipage<span class="nb">}{</span>0.45<span class="k">\textwidth</span><span class="nb">}</span>
+    <span class="nb">{</span><span class="k">\bf</span> First Column<span class="nb">}</span>
+    <span class="k">\footnotesize</span>
+    <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+      <span class="k">\item</span> Lorem ipsum dolor sit amet.
+      <span class="k">\item</span> Consectetuer adipiscing elit.
+      <span class="k">\item</span> Aenean commodo ligula eget dolor.
+    <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>minipage<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>minipage<span class="nb">}{</span>0.45<span class="k">\textwidth</span><span class="nb">}</span>
+    <span class="nb">{</span><span class="k">\bf</span> Second Column<span class="nb">}</span>
+    <span class="k">\footnotesize</span>
+    <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+      <span class="k">\item</span> Lorem ipsum dolor sit amet.
+      <span class="k">\item</span> Consectetuer adipiscing elit.
+      <span class="k">\item</span> Aenean commodo ligula eget dolor.
+    <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>minipage<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
 
-  </pre><h2>two-tables-with-arrow</h2>
-  <center>
-    <img src=".//gen_snippets/two-tables-with-arrow.png" width="50%"></img>
-  </center>
-  <pre>
-\frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
-  Event A $\rightarrow$ Event B $\rightarrow$ Event C \\
-  \begin{tikzpicture}
-    \node[] (n1) {
-      \begin{tabular}{cc}
-        Lorem & ipsum \\
-        dolor & sit \\
-        amet. & Consectetuer \\
-        adipiscing & elit.
-      \end{tabular}
-    };
+      </div>
+    </div>
+  </div><h2>two-tables-with-arrow</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/two-tables-with-arrow.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  Event A <span class="s">$</span><span class="nv">\rightarrow</span><span class="s">$</span> Event B <span class="s">$</span><span class="nv">\rightarrow</span><span class="s">$</span> Event C <span class="k">\\</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\node</span><span class="na">[]</span> (n1) <span class="nb">{</span>
+      <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>cc<span class="nb">}</span>
+        Lorem <span class="nb">&amp;</span> ipsum <span class="k">\\</span>
+        dolor <span class="nb">&amp;</span> sit <span class="k">\\</span>
+        amet. <span class="nb">&amp;</span> Consectetuer <span class="k">\\</span>
+        adipiscing <span class="nb">&amp;</span> elit.
+      <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+    <span class="nb">}</span>;
 
-    \node[right=2cm of n1] (n2) {
-      \begin{tabular}{cc}
-        Aenean & commodo \\
-        ligula & eget \\
-        dolor. &
-      \end{tabular}
-    };
-    \draw[to] (n1) -- node[midway,above]{Event C} (n2);
-  \end{tikzpicture}
-}
+    <span class="k">\node</span><span class="na">[right=2cm of n1]</span> (n2) <span class="nb">{</span>
+      <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>cc<span class="nb">}</span>
+        Aenean <span class="nb">&amp;</span> commodo <span class="k">\\</span>
+        ligula <span class="nb">&amp;</span> eget <span class="k">\\</span>
+        dolor. <span class="nb">&amp;</span>
+      <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+    <span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (n1) -- node[midway,above]<span class="nb">{</span>Event C<span class="nb">}</span> (n2);
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
 
-  </pre>
+      </div>
+    </div>
+  </div>
 
 
   <script src="http://code.jquery.com/jquery-latest.js"></script>
