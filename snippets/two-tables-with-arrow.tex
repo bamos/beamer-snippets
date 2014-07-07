@@ -1,0 +1,22 @@
+\frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
+  Event A $\rightarrow$ Event B $\rightarrow$ Event C \\
+  \begin{tikzpicture}
+    \node[] (n1) {
+      \begin{tabular}{cc}
+        Lorem & ipsum \\
+        dolor & sit \\
+        amet. & Consectetuer \\
+        adipiscing & elit.
+      \end{tabular}
+    };
+
+    \node[right=2cm of n1] (n2) {
+      \begin{tabular}{cc}
+        Aenean & commodo \\
+        ligula & eget \\
+        dolor. &
+      \end{tabular}
+    };
+    \draw[to] (n1) -- node[midway,above]{Event C} (n2);
+  \end{tikzpicture}
+}

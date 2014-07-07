@@ -1,0 +1,20 @@
+\frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
+  \scalebox{0.7}{
+  \begin{tikzpicture}
+    \draw[fill=gray!20] (-1.7cm,-1.1cm) rectangle (3.9cm,1.3cm) {};
+    \node[bn] (config) {Configuration.};
+    \node[on,right=0.5cm of config] (fabric) {Fabric};
+    \node at (0cm,1cm) () {Client Computer};
+    \draw[to] (config) -- (fabric);
+
+    \draw[fill=gray!20] (6cm,-1.1cm) rectangle (12cm,1.3cm) {};
+    \node[greenn] (m) at (7.0cm,0cm) {Master};
+    \node[yn,right=0.2cm of m] (w1) {Worker};
+    \node[yn,right=0.2cm of w1] (w2) {Worker};
+    \node at (10.9cm,1cm) {Cluster};
+
+    \node at (5.4cm,1.7cm) {Provision and start the master.};
+    \draw[to] (fabric) edge [bend left] (m);
+  \end{tikzpicture}
+  }
+}
