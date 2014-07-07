@@ -28,7 +28,7 @@ for subdir, dirs, files in os.walk(snippets_dir):
         gen_tex_name = gen_snippets_dir+"/"+fname
         gen_pdf_name = gen_snippets_dir+"/"+trimmedName+".pdf"
         gen_png_name = gen_snippets_dir+"/"+trimmedName+".png"
-        snippet_content = snippet_f.read()
+        snippet_content = snippet_f.read().strip()
         with open(dist_dir+"/"+gen_tex_name, "w") as f:
           f.write(env.get_template("base.jinja.tex").render(
             content=snippet_content
