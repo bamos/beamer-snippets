@@ -1,12 +1,13 @@
-<html>
-<head><title>Beamer Snippets</title></head>
-<body>
+{% extends "base.jinja.html" %}
+
+{% block content %}
 {% for snippet in snippets -%}
   <h2>{{snippet['fname']}}</h2>
-  <img src="./{{snippet['png']}}" width="100%"></img>
+  <center>
+    <img src="./{{snippet['png']}}" width="50%"></img>
+  </center>
   <pre>
 {{snippet['content']}}
   </pre>
 {%- endfor %}
-</body>
-</html>
+{% endblock %}

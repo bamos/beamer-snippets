@@ -12,8 +12,10 @@ snippets_dir = "snippets"
 dist_dir = "dist"
 html_index = "/index.html"
 gen_snippets_dir = "/gen_snippets"
+static_dir = "static"
 
 shutil.rmtree(dist_dir, ignore_errors=True)
+shutil.copytree(static_dir, dist_dir)
 os.makedirs(dist_dir+"/"+gen_snippets_dir)
 
 snippets = []
