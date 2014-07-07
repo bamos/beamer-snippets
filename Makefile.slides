@@ -1,7 +1,10 @@
 SRC=$(wildcard *.tex)
-PDF=$(SRC:.tex=.pdf)
+PNG=$(SRC:.tex=.png)
 
-all: $(PDF)
+all: $(PNG)
 
 %.pdf: %.tex
 	pdflatex --halt-on-error $<
+
+%.png: %.pdf
+	convert -flatten -density 300 -trim $< -quality 100 $@

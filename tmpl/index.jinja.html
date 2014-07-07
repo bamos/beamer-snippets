@@ -3,8 +3,7 @@
 <body>
 {% for snippet in snippets -%}
   <h2>{{snippet['fname']}}</h2>
-  <!-- TODO: Use PNG rather than PDF. -->
-  <embed src="./{{snippet['pdf']}}" width="100%" height="700">
+  <img src="./{{snippet['png']}}" width="100%"></img>
   <pre>
 {{snippet['content']}}
   </pre>

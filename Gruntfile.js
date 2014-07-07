@@ -1,8 +1,5 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-
-    // Various Grunt tasks...
-
     buildcontrol: {
       options: {
         dir: 'dist',

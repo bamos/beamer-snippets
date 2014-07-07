@@ -25,6 +25,7 @@ for subdir, dirs, files in os.walk(snippets_dir):
       with open(full_path, "r") as snippet_f:
         gen_tex_name = gen_snippets_dir+"/"+fname
         gen_pdf_name = gen_snippets_dir+"/"+trimmedName+".pdf"
+        gen_png_name = gen_snippets_dir+"/"+trimmedName+".png"
         snippet_content = snippet_f.read()
         with open(dist_dir+"/"+gen_tex_name, "w") as f:
           f.write(env.get_template("base.jinja.tex").render(
@@ -33,6 +34,7 @@ for subdir, dirs, files in os.walk(snippets_dir):
         snippets.append({
           'fname': trimmedName,
           'pdf': gen_pdf_name,
+          'png': gen_png_name,
           'content': snippet_content
         })
 
