@@ -1,10 +1,10 @@
 # Beamer Snippets
 
 The [Beamer][beamer] package enables [LaTeX][latex] to produce high quality
-technical presentations, and can be used in combination with the
+technical presentations and can be used in combination with the
 [TikZ][tikz] package for including publication-quality diagrams in presentations.
 However, formatting LaTeX presentations using Beamer and TikZ is
-difficult and time consuming, and I often reuse code snippets from
+difficult and time consuming, so I often reuse code snippets from
 previous presentations.
 This repository contains a collection of snippets I'm gathering from
 my papers and presentations, which are best viewed on
