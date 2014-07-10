@@ -16,6 +16,8 @@ my papers and presentations, which are best viewed on
 Contributions are highly welcomed!
 Please add to the [snippets][snippets] directory, modify the
 [preamble][preamble], and send a pull request.
+If you substantially modify the preamble, I recommend keeping
+your repo as a fork, and I'll keep a list of forks in this README.
 
 ## Webpage Generation Process.
 The Python 3 script [generate.py][gen] produces a static website in `dist`.
