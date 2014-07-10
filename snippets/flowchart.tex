@@ -1,0 +1,13 @@
+\frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
+  \begin{center}
+  \scalebox{0.7}{
+  \begin{tikzpicture}
+    \node[bn] (a) {Event A.};
+    \node[on,right=0.5cm of a] (b) {Event B};
+    \node[rn,right=0.5cm of b] (c) {Event C};
+    \draw[to] (a) -- (b);
+    \draw[to] (b) -- (c);
+  \end{tikzpicture}
+  }
+  \end{center}
+}
