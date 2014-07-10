@@ -40,8 +40,8 @@ body {
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
           <li>
-            <a href="#" data-toggle="modal" data-target="#preambleModal">
-              Preamble
+            <a href="#" data-toggle="modal" data-target="#baseModal">
+              Base Document
             </a>
           </li>
           <li><a href="http://github.com/bamos/beamer-snippets">Github</a></li>
@@ -61,11 +61,37 @@ The following are images and LaTeX snippets generated from the
 <a href="bamos/beamer-snippets">http://github.com/bamos/beamer-snippets</a>
 repository on Github, which I hope to continuously update.
 To use these, copy and paste the code from the
-<a href="#" data-toggle="modal" data-target="#preambleModal">preamble</a>
-to your LaTeX document.
+<a href="#" data-toggle="modal" data-target="#preambleModal">base document</a>
+to a new LaTeX document and compile it for a starting point.
+See <a href="https://www.tug.org/begin.html">here</a> for a further
+introduction to using LaTeX.
 </div>
 
-<h2>deploying</h2>
+<h2>0-title</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/0-title.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\titlepage</span><span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>1-table-of-contents</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/1-table-of-contents.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span>Table of Contents.<span class="nb">}</span><span class="k">\tableofcontents</span><span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>deploying</h2>
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-6">
@@ -91,6 +117,30 @@ to your LaTeX document.
     <span class="k">\draw</span><span class="na">[to]</span> (fabric) edge [bend left] (m);
   <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
   <span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>flowchart</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/flowchart.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+  <span class="k">\scalebox</span><span class="nb">{</span>0.7<span class="nb">}{</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\node</span><span class="na">[bn]</span> (a) <span class="nb">{</span>Event A.<span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[on,right=0.5cm of a]</span> (b) <span class="nb">{</span>Event B<span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[rn,right=0.5cm of b]</span> (c) <span class="nb">{</span>Event C<span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (a) -- (b);
+    <span class="k">\draw</span><span class="na">[to]</span> (b) -- (c);
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+  <span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
 <span class="nb">}</span>
 </pre></div>
 
@@ -248,9 +298,9 @@ to your LaTeX document.
   </div>
   <div id="fb-root"></div>
 
-  <!-- Preamble Modal -->
-  <div class="modal fade bs-example-modal-lg" id="preambleModal"
-      tabindex="-1" role="dialog" aria-labelledby="preambleModalLabel"
+  <!-- Base Modal -->
+  <div class="modal fade bs-example-modal-lg" id="baseModal"
+      tabindex="-1" role="dialog" aria-labelledby="baseModalLabel"
       aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -259,15 +309,12 @@ to your LaTeX document.
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span>
           </button>
-          <h4 class="modal-title" id="preambleModalLabel">Preamble</h4>
+          <h4 class="modal-title" id="baseModalLabel">Base</h4>
         </div>
         <div class="modal-body">
-          LaTeX documents have a ``preamble'' for loading libraries and
-          configuration, and the following is the preamble that I use
-          for my Beamer slides.
-          To use it, copy and paste the contents into a new `.tex` file.
-          Afterwards, surround the content with `\begin{document}`
-          and `\end{document}`.
+          LaTeX documents require configuration options before the
+          actual content starts, and the following is the base document
+          used to generate the snippets.
 
           <div class="highlight"><pre><span class="k">\documentclass</span><span class="nb">{</span>beamer<span class="nb">}</span>
 <span class="c">% Theme Matrix: http://www.hartwork.org/beamer-theme-matrix/</span>
@@ -331,6 +378,15 @@ to your LaTeX document.
   <span class="nb">}</span>,
   every node/.style=<span class="nb">{</span>align=center<span class="nb">}</span>
 <span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\title</span><span class="nb">{</span>Beamer Snippets<span class="nb">}</span><span class="k">\author</span><span class="nb">{</span>Brandon Amos<span class="nb">}</span><span class="k">\date</span><span class="nb">{</span>July 2014<span class="nb">}</span>
+
+<span class="k">\section</span><span class="nb">{</span>Section 1<span class="nb">}</span>
+<span class="k">\subsection</span><span class="nb">{</span>Subsection A<span class="nb">}</span>
+Start content here.
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </pre></div>
 
         </div>
