@@ -53,7 +53,11 @@ if out[1]:
   print("===Stderr:")
   print(out[1].decode())
 
+with open("tmpl/preamble.tex", "r") as f:
+  preamble = f.read()
+
 with open(dist_dir+"/"+html_index, "w") as idx_f:
   idx_f.write(env.get_template("index.jinja.html").render(
-    snippets=snippets
+    snippets=snippets,
+    preamble=highlight(preamble, TexLexer(), HtmlFormatter())
   ))

@@ -1,6 +1,20 @@
 {% extends "base.jinja.html" %}
 
 {% block content %}
+
+<div class="container">
+Formatting Beamer presentations with TikZ is difficult and time consuming,
+but well worth the effort.
+I often refer back to previous presentations to reuse page layouts
+and TikZ diagram formats.
+The following are images and LaTeX snippets generated from the
+<a href="bamos/beamer-snippets">http://github.com/bamos/beamer-snippets</a>
+repository on Github, which I hope to continuously update.
+To use these, copy and paste the code from the
+<a href="#" data-toggle="modal" data-target="#preambleModal">preamble</a>
+to your LaTeX document.
+</div>
+
 {% for snippet in snippets -%}
   <h2>{{snippet['fname']}}</h2>
   <div class="container-fluid">

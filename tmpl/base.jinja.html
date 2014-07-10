@@ -36,12 +36,17 @@ body {
         </button>
         <a class="navbar-brand" href="/">Beamer Snippets</a>
       </div>
-      <!-- <div class="collapse navbar-collapse"> -->
-      <!--   <ul class="nav navbar-nav"> -->
-      <!--     <li class="active"><a href="#">Home</a></li> -->
-      <!--     <li><a href="#about">About</a></li> -->
-      <!--   </ul> -->
-      <!-- </div> -->
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li>
+            <a href="#" data-toggle="modal" data-target="#preambleModal">
+              Preamble
+            </a>
+          </li>
+          <li><a href="http://github.com/bamos/beamer-snippets">Github</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -59,6 +64,39 @@ body {
     </center>
   </div>
   <div id="fb-root"></div>
+
+  <!-- Preamble Modal -->
+  <div class="modal fade bs-example-modal-lg" id="preambleModal"
+      tabindex="-1" role="dialog" aria-labelledby="preambleModalLabel"
+      aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title" id="preambleModalLabel">Preamble</h4>
+        </div>
+        <div class="modal-body">
+          LaTeX documents have a ``preamble'' for loading libraries and
+          configuration, and the following is the preamble that I use
+          for my Beamer slides.
+          To use it, copy and paste the contents into a new `.tex` file.
+          Afterwards, surround the content with `\begin{document}`
+          and `\end{document}`.
+
+          {{ preamble }}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
