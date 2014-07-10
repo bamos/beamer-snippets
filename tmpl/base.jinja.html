@@ -40,8 +40,8 @@ body {
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
           <li>
-            <a href="#" data-toggle="modal" data-target="#preambleModal">
-              Preamble
+            <a href="#" data-toggle="modal" data-target="#baseModal">
+              Base Document
             </a>
           </li>
           <li><a href="http://github.com/bamos/beamer-snippets">Github</a></li>
@@ -65,9 +65,9 @@ body {
   </div>
   <div id="fb-root"></div>
 
-  <!-- Preamble Modal -->
-  <div class="modal fade bs-example-modal-lg" id="preambleModal"
-      tabindex="-1" role="dialog" aria-labelledby="preambleModalLabel"
+  <!-- Base Modal -->
+  <div class="modal fade bs-example-modal-lg" id="baseModal"
+      tabindex="-1" role="dialog" aria-labelledby="baseModalLabel"
       aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -76,17 +76,14 @@ body {
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span>
           </button>
-          <h4 class="modal-title" id="preambleModalLabel">Preamble</h4>
+          <h4 class="modal-title" id="baseModalLabel">Base</h4>
         </div>
         <div class="modal-body">
-          LaTeX documents have a ``preamble'' for loading libraries and
-          configuration, and the following is the preamble that I use
-          for my Beamer slides.
-          To use it, copy and paste the contents into a new `.tex` file.
-          Afterwards, surround the content with `\begin{document}`
-          and `\end{document}`.
+          LaTeX documents require configuration options before the
+          actual content starts, and the following is the base document
+          used to generate the snippets.
 
-          {{ preamble }}
+          {{ base }}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">

@@ -59,5 +59,11 @@ with open("tmpl/preamble.tex", "r") as f:
 with open(dist_dir+"/"+html_index, "w") as idx_f:
   idx_f.write(env.get_template("index.jinja.html").render(
     snippets=snippets,
-    preamble=highlight(preamble, TexLexer(), HtmlFormatter())
+    base=highlight(
+      env.get_template("base.jinja.tex").render(
+        content="Start content here."
+      ),
+      TexLexer(),
+      HtmlFormatter()
+    )
   ))
