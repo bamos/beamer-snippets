@@ -36,16 +36,35 @@ body {
         </button>
         <a class="navbar-brand" href="/">Beamer Snippets</a>
       </div>
-      <!-- <div class="collapse navbar-collapse"> -->
-      <!--   <ul class="nav navbar-nav"> -->
-      <!--     <li class="active"><a href="#">Home</a></li> -->
-      <!--     <li><a href="#about">About</a></li> -->
-      <!--   </ul> -->
-      <!-- </div> -->
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li>
+            <a href="#" data-toggle="modal" data-target="#preambleModal">
+              Preamble
+            </a>
+          </li>
+          <li><a href="http://github.com/bamos/beamer-snippets">Github</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 
   
+
+<div class="container">
+Formatting Beamer presentations with TikZ is difficult and time consuming,
+but well worth the effort.
+I often refer back to previous presentations to reuse page layouts
+and TikZ diagram formats.
+The following are images and LaTeX snippets generated from the
+<a href="bamos/beamer-snippets">http://github.com/bamos/beamer-snippets</a>
+repository on Github, which I hope to continuously update.
+To use these, copy and paste the code from the
+<a href="#" data-toggle="modal" data-target="#preambleModal">preamble</a>
+to your LaTeX document.
+</div>
+
 <h2>deploying</h2>
   <div class="container-fluid">
     <div class="row">
@@ -175,6 +194,102 @@ body {
     </center>
   </div>
   <div id="fb-root"></div>
+
+  <!-- Preamble Modal -->
+  <div class="modal fade bs-example-modal-lg" id="preambleModal"
+      tabindex="-1" role="dialog" aria-labelledby="preambleModalLabel"
+      aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title" id="preambleModalLabel">Preamble</h4>
+        </div>
+        <div class="modal-body">
+          LaTeX documents have a ``preamble'' for loading libraries and
+          configuration, and the following is the preamble that I use
+          for my Beamer slides.
+          To use it, copy and paste the contents into a new `.tex` file.
+          Afterwards, surround the content with `\begin{document}`
+          and `\end{document}`.
+
+          <div class="highlight"><pre><span class="k">\documentclass</span><span class="nb">{</span>beamer<span class="nb">}</span>
+<span class="c">% Theme Matrix: http://www.hartwork.org/beamer-theme-matrix/</span>
+<span class="k">\mode</span>&lt;presentation&gt; <span class="nb">{</span> <span class="k">\usetheme</span><span class="nb">{</span>Malmoe<span class="nb">}</span><span class="k">\usecolortheme</span><span class="nb">{</span>dove<span class="nb">}</span> <span class="nb">}</span>
+<span class="k">\setbeamertemplate</span><span class="nb">{</span>itemize items<span class="nb">}</span>[default]
+<span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>parskip,graphics,tikz<span class="nb">}</span>
+<span class="k">\usetikzlibrary</span><span class="nb">{</span>arrows,positioning,shapes<span class="nb">}</span>
+<span class="k">\setlength</span><span class="nb">{</span><span class="k">\itemsep</span><span class="nb">}{</span>0pt<span class="nb">}</span><span class="k">\setlength</span><span class="nb">{</span><span class="k">\parskip</span><span class="nb">}{</span>0pt<span class="nb">}</span><span class="k">\setlength</span><span class="nb">{</span><span class="k">\parsep</span><span class="nb">}{</span>0pt<span class="nb">}</span>
+<span class="k">\graphicspath</span><span class="nb">{</span> <span class="nb">{</span>./images/<span class="nb">}</span> <span class="nb">}</span>
+
+<span class="k">\usepackage</span><span class="nb">{</span>listings,textcomp,color<span class="nb">}</span>
+<span class="k">\lstset</span><span class="nb">{</span>language=Python,upquote=true,
+  basicstyle=<span class="k">\ttfamily\tiny</span>,commentstyle=<span class="k">\textit</span>,stringstyle=<span class="k">\upshape</span>,
+  numbers=left,numberstyle=<span class="k">\tiny</span>,stepnumber=1,numbersep=5pt,
+  backgroundcolor=<span class="k">\color</span><span class="nb">{</span>white<span class="nb">}</span>,frame=single,tabsize=2,
+  showspaces=false,showstringspaces=false,showtabs=false,
+  breaklines=true,breakatwhitespace=true,escapeinside=<span class="nb">{</span><span class="k">\%*</span><span class="nb">}{</span>*)<span class="nb">}</span>
+<span class="nb">}</span>
+<span class="k">\lstdefinelanguage</span><span class="nb">{</span>scala<span class="nb">}{</span>
+  morekeywords=<span class="nb">{</span>abstract,case,catch,class,def,<span class="c">%</span>
+    do,else,extends,false,final,finally,<span class="c">%</span>
+    for,if,implicit,import,match,mixin,<span class="c">%</span>
+    new,null,object,override,package,<span class="c">%</span>
+    private,protected,requires,return,sealed,<span class="c">%</span>
+    super,this,throw,trait,true,try,<span class="c">%</span>
+    type,val,var,while,with,yield<span class="nb">}</span>,
+  otherkeywords=<span class="nb">{</span>=&gt;,&lt;-,&lt;<span class="k">\%</span>,&lt;:,&gt;:,<span class="k">\#</span>,@<span class="nb">}</span>,
+  sensitive=true,
+  morecomment=[l]<span class="nb">{</span>//<span class="nb">}</span>,
+  morecomment=[n]<span class="nb">{</span>/*<span class="nb">}{</span>*/<span class="nb">}</span>,
+  morestring=[b]&quot;,
+  morestring=[b]&#39;,
+  morestring=[b]&quot;&quot;&quot;
+<span class="nb">}</span>
+
+<span class="k">\usebackgroundtemplate</span><span class="nb">{</span>
+  <span class="k">\tikz</span><span class="na">[overlay,remember picture]</span>
+  <span class="k">\node</span><span class="na">[yshift=10mm,anchor=south east,inner sep=0pt]</span>
+    at (current page.south east) <span class="nb">{</span>
+    <span class="c">% Add small logo here if desired.</span>
+    <span class="c">% \includegraphics[width=0.5in]{logo.png}</span>
+  <span class="nb">}</span>;
+<span class="nb">}</span>
+
+<span class="k">\tikzset</span><span class="nb">{</span>
+  yn/.style=<span class="nb">{</span>draw,thick,rounded corners,fill=yellow!20,inner sep=.3cm<span class="nb">}</span>,
+  bn/.style=<span class="nb">{</span>draw,thick,rounded corners,fill=blue!20,inner sep=.3cm<span class="nb">}</span>,
+  on/.style=<span class="nb">{</span>draw,thick,rounded corners,fill=orange!20,inner sep=.3cm<span class="nb">}</span>,
+  rn/.style=<span class="nb">{</span>draw,thick,rounded corners,fill=red!20,inner sep=.3cm<span class="nb">}</span>,
+  greenn/.style=<span class="nb">{</span>draw,thick,rounded corners,fill=green!20,inner sep=.3cm<span class="nb">}</span>,
+  grayn/.style=<span class="nb">{</span>draw,thick,rounded corners,fill=gray!20,inner sep=.3cm<span class="nb">}</span>,
+  to/.style=<span class="nb">{</span>
+    -&gt;,&gt;=stealth&#39;,shorten &gt;=1pt,semithick,font=<span class="k">\sffamily\footnotesize</span>
+  <span class="nb">}</span>,
+  from/.style=<span class="nb">{</span>
+    &lt;-,&gt;=stealth&#39;,shorten &gt;=1pt,semithick,font=<span class="k">\sffamily\footnotesize</span>
+  <span class="nb">}</span>,
+  tofrom/.style=<span class="nb">{</span>
+    &lt;-&gt;,&gt;=stealth&#39;,shorten &gt;=1pt,semithick,font=<span class="k">\sffamily\footnotesize</span>
+  <span class="nb">}</span>,
+  every node/.style=<span class="nb">{</span>align=center<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
