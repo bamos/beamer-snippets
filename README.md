@@ -27,7 +27,7 @@ The Python 3 script [generate.py][gen] produces a static website in `dist`.
 each slide, and Jinja HTML templates are used to create `index.html`.
 
 ### Grunt
-[Grunt][grunt] is used for deploying `dist` to [Github pages][ghp]
+[Grunt][grunt] is used to deploy `dist` to [Github pages][ghp]
 in the [gh-pages][bs-ghp] branch with the [grunt-build-control][gbc] plugin.
 The [npm][npm] dependencies are managed in [package.json][pjson]
 and can be installed with `npm install`.
