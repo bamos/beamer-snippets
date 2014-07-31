@@ -35,6 +35,10 @@ and can be installed with `npm install`.
 + `grunt generate` produces the static site in `dist`, and
 + `grunt deploy` pushes the `dist` directory to the `gh-pages` branch.
 
+# Licensing.
+All LaTeX portions are released into the public domain,
+and other portions are under the MIT license.
+
 [beamer]: http://en.wikipedia.org/wiki/Beamer_(LaTeX)
 [tikz]: http://en.wikibooks.org/wiki/LaTeX/PGF/TikZ
 [latex]: http://www.latex-project.org/
