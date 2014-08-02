@@ -9,7 +9,9 @@ from pygments.lexers import TexLexer
 from pygments.formatters import HtmlFormatter
 from subprocess import Popen,PIPE
 
-env = Environment(loader=FileSystemLoader("tmpl"))
+env = Environment(loader=FileSystemLoader("tmpl"),
+  block_start_string='~{',block_end_string='}~',
+  variable_start_string='~{{', variable_end_string='}}~')
 
 snippets_dir = "snippets"
 dist_dir = "dist"
