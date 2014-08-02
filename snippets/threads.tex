@@ -1,0 +1,24 @@
+\frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
+  \begin{center}
+  \scalebox{0.75}{
+  \begin{tikzpicture}
+    \draw[squig] (0,0) -- (2,0);\node at (2,0.2) {{\footnotesize $t_1^2$}};
+    \draw[squig] (2.2,0) -- (3,0);\node at (3,0.2) {{\footnotesize $t_2^2$}};
+    \draw[squig] (3.2,0) -- (4,0);\node at (4,0.2) {{\footnotesize $t_3^2$}};
+
+    \draw[squig] (0,0.5) -- (0.5,0.5);\node at (0.5,0.7)
+      {{\footnotesize $t_1^1$}};
+    \draw[squig] (0.7,0.5) -- (1.5,0.5);\node at (1.5,0.7)
+      {{\footnotesize $t_2^1$}};
+    \draw[squig] (1.7,0.5) -- (2.5,0.5);\node at (2.5,0.7)
+      {{\footnotesize $t_3^1$}};
+    \draw[squig] (2.7,0.5) -- (3.7,0.5);\node at (3.7,0.7)
+      {{\footnotesize \sout{$t_4^1$}}};
+    \draw[squig] (3.9,0.5) -- (5.0,0.5);\node at (5.0,0.7)
+      {{\footnotesize \sout{$t_5^1$}}};
+
+    \draw (4,-0.5) -- (4,1);
+  \end{tikzpicture}
+  }
+  \end{center}
+}
