@@ -71,12 +71,15 @@
 \section{Section 1}
 \subsection{Subsection A}
 \frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
-  \begin{tikzpicture}[
-    every node/.style={draw,line width=2pt,inner sep=0,outer sep=0}]
-\node at (0,0) () {\includegraphics[draft,width=0.9\textwidth,height=5cm]{a.png}};
-\node at (1.5,-2.5) () {\includegraphics[draft,width=0.4\textwidth,height=2cm]{b.png}};
-\node at (4,0.5) () {\includegraphics[draft,width=0.3\textwidth,height=5cm]{c.png}};
-  \end{tikzpicture}
+  \begin{itemize}
+    \item Lorem ipsum dolor sit amet.
+    \item Consectetuer adipiscing elit.
+    \item
+      \begin{multicols}{2}
+        \foreach \i in {1,10} {\item \i}
+      \end{multicols}
+    \item Aenean commodo ligula eget dolor.
+  \end{itemize}
 }
 
 \end{document}

@@ -70,13 +70,15 @@
 
 \section{Section 1}
 \subsection{Subsection A}
-\frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
-  \begin{tikzpicture}[
-    every node/.style={draw,line width=2pt,inner sep=0,outer sep=0}]
-\node at (0,0) () {\includegraphics[draft,width=0.9\textwidth,height=5cm]{a.png}};
-\node at (1.5,-2.5) () {\includegraphics[draft,width=0.4\textwidth,height=2cm]{b.png}};
-\node at (4,0.5) () {\includegraphics[draft,width=0.3\textwidth,height=5cm]{c.png}};
-  \end{tikzpicture}
+\begin{frame}[fragile]
+  \frametitle{\insertsection}\framesubtitle{\insertsubsection}
+  \begin{lstlisting}[language=scala,keywordstyle=\bf,stringstyle=\it]
+// Sample Scala code listing.
+object Foo {
+  val sequence = Seq("bar", "baz")
+  lazy val conf = if (someCondition) a else b
 }
+  \end{lstlisting}
+\end{frame}
 
 \end{document}

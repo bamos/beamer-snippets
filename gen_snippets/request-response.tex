@@ -71,12 +71,28 @@
 \section{Section 1}
 \subsection{Subsection A}
 \frame{\frametitle{\insertsection}\framesubtitle{\insertsubsection}
-  \begin{tikzpicture}[
-    every node/.style={draw,line width=2pt,inner sep=0,outer sep=0}]
-\node at (0,0) () {\includegraphics[draft,width=0.9\textwidth,height=5cm]{a.png}};
-\node at (1.5,-2.5) () {\includegraphics[draft,width=0.4\textwidth,height=2cm]{b.png}};
-\node at (4,0.5) () {\includegraphics[draft,width=0.3\textwidth,height=5cm]{c.png}};
+  \begin{center}
+  \begin{tikzpicture}
+    \node[bn] (query) {{\tt http://server/query}};
+
+    \node[greenn,right=of query] (spray) {Spray};
+    \draw[squig] (3.3cm,-0.6cm) -- (3.3cm,-1.5cm);
+    \draw[squig] (3.8cm,-0.6cm) -- (3.8cm,-1.5cm);
+    \draw[fill=yellow!20] (4.1cm,-1.6cm) rectangle (4.5cm,-0.5cm) {};
+    \draw[squig] (4.3cm,-0.6cm) -- (4.3cm,-1.5cm);
+    \node[yn,right=of spray] (actor) {Actor};
+
+    \node at (1.9cm,1.1cm) {{\footnotesize HTTP Request}};
+    \node at (1.7cm,-1.2cm) {{\footnotesize HTTP Response}\\{\footnotesize (HTML or text)}};
+    \draw[to] (query) edge [bend left] (spray);
+    \draw[to] (spray) edge [bend left] (query);
+
+    \node at (5.5cm,1.1cm) {{\footnotesize Spray Request}};
+    \node at (5.7cm,-1.2cm) {{\footnotesize Spray Response} \\ {\footnotesize (Future)}};
+    \draw[to] (spray) edge [bend left] (actor);
+    \draw[to] (actor) edge [bend left] (spray);
   \end{tikzpicture}
+  \end{center}
 }
 
 \end{document}
