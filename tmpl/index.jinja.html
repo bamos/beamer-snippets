@@ -1,6 +1,6 @@
-{% extends "base.jinja.html" %}
+~{ extends "base.jinja.html" }~
 
-{% block content %}
+~{ block content }~
 
 <div class="container">
 The <a href="http://en.wikipedia.org/wiki/Beamer_(LaTeX)">Beamer</a> package
@@ -21,17 +21,17 @@ See <a href="https://www.tug.org/begin.html">here</a> for a further
 introduction to LaTeX.
 </div>
 
-{% for snippet in snippets -%}
-  <h2>{{snippet['fname']}}</h2>
+~{ for snippet in snippets -}~
+  <h2>~{{snippet['fname']}}~</h2>
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-6">
-        <img src="./{{snippet['png']}}" width="100%"></img>
+        <img src="./~{{snippet['png']}}~" width="100%"></img>
       </div>
       <div class="col-xs-6">
-        {{ snippet['content'] }}
+        ~{{ snippet['content'] }}~
       </div>
     </div>
   </div>
-{%- endfor %}
-{% endblock %}
+~{- endfor }~
+~{ endblock }~

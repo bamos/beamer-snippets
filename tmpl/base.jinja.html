@@ -50,7 +50,7 @@ body {
     </div>
   </div>
 
-  {% block content %}{% endblock %}
+  ~{ block content }~~{ endblock }~
 
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="js/bootstrap.js"></script>
@@ -83,7 +83,7 @@ body {
           actual content starts, and the following is the base document
           used to generate the snippets.
 
-          {{ base }}
+          ~{{ base }}~
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">
