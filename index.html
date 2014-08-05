@@ -1,6 +1,56 @@
-{% extends "base.jinja.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Beamer Snippets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-{% block content %}
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/pygments.css" rel="stylesheet">
+  <style type="text/css">
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+  </style>
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle"
+            data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Beamer Snippets</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li>
+            <a href="#" data-toggle="modal" data-target="#baseModal">
+              Base Document
+            </a>
+          </li>
+          <li><a href="http://github.com/bamos/beamer-snippets">Github</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  
 
 <div class="container">
 The <a href="http://en.wikipedia.org/wiki/Beamer_(LaTeX)">Beamer</a> package
@@ -21,17 +71,482 @@ See <a href="https://www.tug.org/begin.html">here</a> for a further
 introduction to LaTeX.
 </div>
 
-{% for snippet in snippets -%}
-  <h2>{{snippet['fname']}}</h2>
+<h2>0-title</h2>
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-6">
-        <img src="./{{snippet['png']}}" width="100%"></img>
+        <img src=".//gen_snippets/0-title.png" width="100%"></img>
       </div>
       <div class="col-xs-6">
-        {{ snippet['content'] }}
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\titlepage</span><span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>1-table-of-contents</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/1-table-of-contents.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span>Table of Contents.<span class="nb">}</span><span class="k">\tableofcontents</span><span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>code-listing</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/code-listing.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
+  <span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>lstlisting<span class="nb">}</span>[language=scala,keywordstyle=<span class="k">\bf</span>,stringstyle=<span class="k">\it</span>]
+// Sample Scala code listing.
+object Foo <span class="nb">{</span>
+  val sequence = Seq(&quot;bar&quot;, &quot;baz&quot;)
+  lazy val conf = if (someCondition) a else b
+<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>lstlisting<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>deploying</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/deploying.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\scalebox</span><span class="nb">{</span>0.7<span class="nb">}{</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\draw</span><span class="na">[fill=gray!20]</span> (-1.7cm,-1.1cm) rectangle (3.9cm,1.3cm) <span class="nb">{}</span>;
+    <span class="k">\node</span><span class="na">[bn]</span> (config) <span class="nb">{</span>Configuration.<span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[on,right=0.5cm of config]</span> (fabric) <span class="nb">{</span>Fabric<span class="nb">}</span>;
+    <span class="k">\node</span> at (0cm,1cm) () <span class="nb">{</span>Client Computer<span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (config) -- (fabric);
+
+    <span class="k">\draw</span><span class="na">[fill=gray!20]</span> (6cm,-1.1cm) rectangle (12cm,1.3cm) <span class="nb">{}</span>;
+    <span class="k">\node</span><span class="na">[greenn]</span> (m) at (7.0cm,0cm) <span class="nb">{</span>Master<span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[yn,right=0.2cm of m]</span> (w1) <span class="nb">{</span>Worker<span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[yn,right=0.2cm of w1]</span> (w2) <span class="nb">{</span>Worker<span class="nb">}</span>;
+    <span class="k">\node</span> at (10.9cm,1cm) <span class="nb">{</span>Cluster<span class="nb">}</span>;
+
+    <span class="k">\node</span> at (5.4cm,1.7cm) <span class="nb">{</span>Provision and start the master.<span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (fabric) edge [bend left] (m);
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+  <span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>flowchart</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/flowchart.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+  <span class="k">\scalebox</span><span class="nb">{</span>0.7<span class="nb">}{</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\node</span><span class="na">[bn]</span> (a) <span class="nb">{</span>Event A.<span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[on,right=0.5cm of a]</span> (b) <span class="nb">{</span>Event B.<span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[rn,right=0.5cm of b]</span> (c) <span class="nb">{</span>Event C.<span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (a) -- (b);
+    <span class="k">\draw</span><span class="na">[to]</span> (b) -- (c);
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+  <span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>for-loop</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/for-loop.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+    <span class="k">\foreach</span> <span class="k">\val</span> in <span class="nb">{</span>Lorem ipsum,dolor sit,amet.<span class="nb">}</span> <span class="nb">{</span> <span class="k">\item</span> <span class="k">\val</span> <span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>multicol-bullets</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/multicol-bullets.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+    <span class="k">\item</span> Lorem ipsum dolor sit amet.
+    <span class="k">\item</span> Consectetuer adipiscing elit.
+    <span class="k">\item</span>
+      <span class="k">\begin</span><span class="nb">{</span>multicols<span class="nb">}{</span>2<span class="nb">}</span>
+        <span class="k">\foreach</span> <span class="k">\i</span> in <span class="nb">{</span>1,10<span class="nb">}</span> <span class="nb">{</span><span class="k">\item</span> <span class="k">\i</span><span class="nb">}</span>
+      <span class="k">\end</span><span class="nb">{</span>multicols<span class="nb">}</span>
+    <span class="k">\item</span> Aenean commodo ligula eget dolor.
+  <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>overlayed-images</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/overlayed-images.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[
+    every node/.style=<span class="nb">{</span>draw,line width=2pt,inner sep=0,outer sep=0<span class="nb">}</span>]
+<span class="k">\node</span> at (0,0) () <span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[draft,width=0.9\textwidth,height=5cm]</span><span class="nb">{</span>a.png<span class="nb">}}</span>;
+<span class="k">\node</span> at (1.5,-2.5) () <span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[draft,width=0.4\textwidth,height=2cm]</span><span class="nb">{</span>b.png<span class="nb">}}</span>;
+<span class="k">\node</span> at (4,0.5) () <span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[draft,width=0.3\textwidth,height=5cm]</span><span class="nb">{</span>c.png<span class="nb">}}</span>;
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>request-response</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/request-response.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\node</span><span class="na">[bn]</span> (query) <span class="nb">{{</span><span class="k">\tt</span> http://server/query<span class="nb">}}</span>;
+
+    <span class="k">\node</span><span class="na">[greenn,right=of query]</span> (spray) <span class="nb">{</span>Spray<span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[squig]</span> (3.3cm,-0.6cm) -- (3.3cm,-1.5cm);
+    <span class="k">\draw</span><span class="na">[squig]</span> (3.8cm,-0.6cm) -- (3.8cm,-1.5cm);
+    <span class="k">\draw</span><span class="na">[fill=yellow!20]</span> (4.1cm,-1.6cm) rectangle (4.5cm,-0.5cm) <span class="nb">{}</span>;
+    <span class="k">\draw</span><span class="na">[squig]</span> (4.3cm,-0.6cm) -- (4.3cm,-1.5cm);
+    <span class="k">\node</span><span class="na">[yn,right=of spray]</span> (actor) <span class="nb">{</span>Actor<span class="nb">}</span>;
+
+    <span class="k">\node</span> at (1.9cm,1.1cm) <span class="nb">{{</span><span class="k">\footnotesize</span> HTTP Request<span class="nb">}}</span>;
+    <span class="k">\node</span> at (1.7cm,-1.2cm) <span class="nb">{{</span><span class="k">\footnotesize</span> HTTP Response<span class="nb">}</span><span class="k">\\</span><span class="nb">{</span><span class="k">\footnotesize</span> (HTML or text)<span class="nb">}}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (query) edge [bend left] (spray);
+    <span class="k">\draw</span><span class="na">[to]</span> (spray) edge [bend left] (query);
+
+    <span class="k">\node</span> at (5.5cm,1.1cm) <span class="nb">{{</span><span class="k">\footnotesize</span> Spray Request<span class="nb">}}</span>;
+    <span class="k">\node</span> at (5.7cm,-1.2cm) <span class="nb">{{</span><span class="k">\footnotesize</span> Spray Response<span class="nb">}</span> <span class="k">\\</span> <span class="nb">{</span><span class="k">\footnotesize</span> (Future)<span class="nb">}}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (spray) edge [bend left] (actor);
+    <span class="k">\draw</span><span class="na">[to]</span> (actor) edge [bend left] (spray);
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>simple-bullets</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/simple-bullets.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+    <span class="k">\item</span> Lorem ipsum dolor sit amet.
+    <span class="k">\item</span> Consectetuer adipiscing elit.
+    <span class="k">\item</span> Aenean commodo ligula eget dolor.
+  <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>simple-graphic</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/simple-graphic.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\includegraphics</span><span class="na">[draft,width=0.9\textwidth,height=5cm]</span><span class="nb">{</span>a.png<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>simple-table</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/simple-table.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+    <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>cc<span class="nb">}</span>
+      Lorem <span class="nb">&amp;</span> ipsum <span class="k">\\</span> <span class="k">\hline</span>
+      dolor <span class="nb">&amp;</span> sit <span class="k">\\</span>
+      amet. <span class="nb">&amp;</span> Consectetuer <span class="k">\\</span>
+      adipiscing <span class="nb">&amp;</span> elit.
+    <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>threads</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/threads.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+  <span class="k">\scalebox</span><span class="nb">{</span>0.75<span class="nb">}{</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\draw</span><span class="na">[squig]</span> (0,0) -- (2,0);<span class="k">\node</span> at (2,0.2) <span class="nb">{{</span><span class="k">\footnotesize</span> <span class="s">$</span><span class="nb">t_</span><span class="m">1</span><span class="nb">^</span><span class="m">2</span><span class="s">$</span><span class="nb">}}</span>;
+    <span class="k">\draw</span><span class="na">[squig]</span> (2.2,0) -- (3,0);<span class="k">\node</span> at (3,0.2) <span class="nb">{{</span><span class="k">\footnotesize</span> <span class="s">$</span><span class="nb">t_</span><span class="m">2</span><span class="nb">^</span><span class="m">2</span><span class="s">$</span><span class="nb">}}</span>;
+    <span class="k">\draw</span><span class="na">[squig]</span> (3.2,0) -- (4,0);<span class="k">\node</span> at (4,0.2) <span class="nb">{{</span><span class="k">\footnotesize</span> <span class="s">$</span><span class="nb">t_</span><span class="m">3</span><span class="nb">^</span><span class="m">2</span><span class="s">$</span><span class="nb">}}</span>;
+
+    <span class="k">\draw</span><span class="na">[squig]</span> (0,0.5) -- (0.5,0.5);<span class="k">\node</span> at (0.5,0.7)
+      <span class="nb">{{</span><span class="k">\footnotesize</span> <span class="s">$</span><span class="nb">t_</span><span class="m">1</span><span class="nb">^</span><span class="m">1</span><span class="s">$</span><span class="nb">}}</span>;
+    <span class="k">\draw</span><span class="na">[squig]</span> (0.7,0.5) -- (1.5,0.5);<span class="k">\node</span> at (1.5,0.7)
+      <span class="nb">{{</span><span class="k">\footnotesize</span> <span class="s">$</span><span class="nb">t_</span><span class="m">2</span><span class="nb">^</span><span class="m">1</span><span class="s">$</span><span class="nb">}}</span>;
+    <span class="k">\draw</span><span class="na">[squig]</span> (1.7,0.5) -- (2.5,0.5);<span class="k">\node</span> at (2.5,0.7)
+      <span class="nb">{{</span><span class="k">\footnotesize</span> <span class="s">$</span><span class="nb">t_</span><span class="m">3</span><span class="nb">^</span><span class="m">1</span><span class="s">$</span><span class="nb">}}</span>;
+    <span class="k">\draw</span><span class="na">[squig]</span> (2.7,0.5) -- (3.7,0.5);<span class="k">\node</span> at (3.7,0.7)
+      <span class="nb">{{</span><span class="k">\footnotesize</span> <span class="k">\sout</span><span class="nb">{</span><span class="s">$</span><span class="nb">t_</span><span class="m">4</span><span class="nb">^</span><span class="m">1</span><span class="s">$</span><span class="nb">}}}</span>;
+    <span class="k">\draw</span><span class="na">[squig]</span> (3.9,0.5) -- (5.0,0.5);<span class="k">\node</span> at (5.0,0.7)
+      <span class="nb">{{</span><span class="k">\footnotesize</span> <span class="k">\sout</span><span class="nb">{</span><span class="s">$</span><span class="nb">t_</span><span class="m">5</span><span class="nb">^</span><span class="m">1</span><span class="s">$</span><span class="nb">}}}</span>;
+
+    <span class="k">\draw</span> (4,-0.5) -- (4,1);
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+  <span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>two-column</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/two-column.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>minipage<span class="nb">}{</span>0.45<span class="k">\textwidth</span><span class="nb">}</span>
+    <span class="nb">{</span><span class="k">\bf</span> First Column<span class="nb">}</span>
+    <span class="k">\footnotesize</span>
+    <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+      <span class="k">\item</span> Lorem ipsum dolor sit amet.
+      <span class="k">\item</span> Consectetuer adipiscing elit.
+      <span class="k">\item</span> Aenean commodo ligula eget dolor.
+    <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>minipage<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>minipage<span class="nb">}{</span>0.45<span class="k">\textwidth</span><span class="nb">}</span>
+    <span class="nb">{</span><span class="k">\bf</span> Second Column<span class="nb">}</span>
+    <span class="k">\footnotesize</span>
+    <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+      <span class="k">\item</span> Lorem ipsum dolor sit amet.
+      <span class="k">\item</span> Consectetuer adipiscing elit.
+      <span class="k">\item</span> Aenean commodo ligula eget dolor.
+    <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>minipage<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>two-tables-with-arrow</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/two-tables-with-arrow.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  Event A <span class="s">$</span><span class="nv">\rightarrow</span><span class="s">$</span> Event B <span class="s">$</span><span class="nv">\rightarrow</span><span class="s">$</span> Event C <span class="k">\\</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\node</span><span class="na">[]</span> (n1) <span class="nb">{</span>
+      <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>cc<span class="nb">}</span>
+        Lorem <span class="nb">&amp;</span> ipsum <span class="k">\\</span>
+        dolor <span class="nb">&amp;</span> sit <span class="k">\\</span>
+        amet. <span class="nb">&amp;</span> Consectetuer <span class="k">\\</span>
+        adipiscing <span class="nb">&amp;</span> elit.
+      <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+    <span class="nb">}</span>;
+
+    <span class="k">\node</span><span class="na">[right=2cm of n1]</span> (n2) <span class="nb">{</span>
+      <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>cc<span class="nb">}</span>
+        Aenean <span class="nb">&amp;</span> commodo <span class="k">\\</span>
+        ligula <span class="nb">&amp;</span> eget <span class="k">\\</span>
+        dolor. <span class="nb">&amp;</span>
+      <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+    <span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (n1) -- node[midway,above]<span class="nb">{</span>Event C<span class="nb">}</span> (n2);
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
       </div>
     </div>
   </div>
-{%- endfor %}
-{% endblock %}
+
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <div id="footer">
+    <center>
+      Crafted by <a href="http://bamos.io/about">Brandon Amos</a>. |
+      <a href="http://github.com/bamos/beamer-snippets">Open-sourced on GitHub</a>. |
+      <div class="fb-share-button" id='fb-share'
+        data-href="replaced-by-js" data-type="button"></div>
+    </center>
+  </div>
+  <div id="fb-root"></div>
+
+  <!-- Base Modal -->
+  <div class="modal fade bs-example-modal-lg" id="baseModal"
+      tabindex="-1" role="dialog" aria-labelledby="baseModalLabel"
+      aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title" id="baseModalLabel">Base</h4>
+        </div>
+        <div class="modal-body">
+          LaTeX documents require configuration options before the
+          actual content starts, and the following is the base document
+          used to generate the snippets.
+
+          <div class="highlight"><pre><span class="k">\documentclass</span><span class="nb">{</span>beamer<span class="nb">}</span>
+<span class="c">% Theme Matrix: http://www.hartwork.org/beamer-theme-matrix/</span>
+<span class="k">\mode</span>&lt;presentation&gt; <span class="nb">{</span> <span class="k">\usetheme</span><span class="nb">{</span>Malmoe<span class="nb">}</span><span class="k">\usecolortheme</span><span class="nb">{</span>dove<span class="nb">}</span> <span class="nb">}</span>
+<span class="k">\setbeamertemplate</span><span class="nb">{</span>itemize items<span class="nb">}</span>[default]
+<span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>parskip,graphics,tikz,multimedia,hyperref,ulem,multicol<span class="nb">}</span>
+<span class="k">\usetikzlibrary</span><span class="nb">{</span>arrows,positioning,shapes,decorations.pathmorphing<span class="nb">}</span>
+<span class="k">\setlength</span><span class="nb">{</span><span class="k">\itemsep</span><span class="nb">}{</span>0pt<span class="nb">}</span><span class="k">\setlength</span><span class="nb">{</span><span class="k">\parskip</span><span class="nb">}{</span>0pt<span class="nb">}</span><span class="k">\setlength</span><span class="nb">{</span><span class="k">\parsep</span><span class="nb">}{</span>0pt<span class="nb">}</span>
+<span class="k">\graphicspath</span><span class="nb">{{</span>./images/<span class="nb">}}</span>
+
+<span class="k">\usepackage</span><span class="nb">{</span>listings,textcomp,color<span class="nb">}</span>
+<span class="k">\lstset</span><span class="nb">{</span>language=Python,upquote=true,
+  basicstyle=<span class="k">\ttfamily\tiny</span>,numbers=left,
+  numberstyle=<span class="k">\tiny</span>,stepnumber=1,numbersep=5pt,
+  backgroundcolor=<span class="k">\color</span><span class="nb">{</span>white<span class="nb">}</span>,frame=single,tabsize=2,
+  showspaces=false,showstringspaces=false,showtabs=false,
+  breaklines=true,breakatwhitespace=true,escapeinside=<span class="nb">{</span><span class="k">\%*</span><span class="nb">}{</span>*)<span class="nb">}</span>,
+  keywordstyle=<span class="k">\color</span><span class="nb">{</span>blue!70<span class="nb">}</span>,stringstyle=<span class="k">\color</span><span class="nb">{</span>green!70!black!70<span class="nb">}</span>,
+  commentstyle=<span class="k">\color</span><span class="nb">{</span>black!80<span class="nb">}</span><span class="k">\it</span>
+<span class="nb">}</span>
+<span class="k">\lstdefinelanguage</span><span class="nb">{</span>scala<span class="nb">}{</span>
+  morekeywords=<span class="nb">{</span>abstract,case,catch,class,def,<span class="c">%</span>
+    do,else,extends,false,final,finally,<span class="c">%</span>
+    for,if,implicit,import,match,mixin,<span class="c">%</span>
+    new,null,object,override,package,<span class="c">%</span>
+    private,protected,requires,return,sealed,<span class="c">%</span>
+    super,this,throw,trait,true,try,<span class="c">%</span>
+    type,val,var,while,with,yield<span class="nb">}</span>,
+  otherkeywords=<span class="nb">{</span>=&gt;,&lt;-,&lt;<span class="k">\%</span>,&lt;:,&gt;:,<span class="k">\#</span>,@<span class="nb">}</span>,
+  sensitive=true,
+  morecomment=[l]<span class="nb">{</span>//<span class="nb">}</span>,
+  morecomment=[n]<span class="nb">{</span>/*<span class="nb">}{</span>*/<span class="nb">}</span>,
+  morestring=[b]&quot;,
+  morestring=[b]&#39;,
+  morestring=[b]&quot;&quot;&quot;
+<span class="nb">}</span>
+
+<span class="k">\usebackgroundtemplate</span><span class="nb">{</span>
+  <span class="k">\tikz</span><span class="na">[overlay,remember picture]</span>
+  <span class="k">\node</span><span class="na">[yshift=10mm,anchor=south east,inner sep=0pt]</span>
+    at (current page.south east) <span class="nb">{</span>
+    <span class="c">% Add small logo here if desired.</span>
+    <span class="c">% \includegraphics[width=0.5in]{logo.png}</span>
+  <span class="nb">}</span>;
+<span class="nb">}</span>
+
+<span class="k">\tikzset</span><span class="nb">{</span>
+  yn/.style=<span class="nb">{</span>draw,thick,rounded corners,fill=yellow!20,inner sep=.3cm<span class="nb">}</span>,
+  bn/.style=<span class="nb">{</span>draw,thick,rounded corners,fill=blue!05,inner sep=.3cm<span class="nb">}</span>,
+  on/.style=<span class="nb">{</span>draw,thick,rounded corners,fill=orange!20,inner sep=.3cm<span class="nb">}</span>,
+  rn/.style=<span class="nb">{</span>draw,thick,rounded corners,fill=red!20,inner sep=.3cm<span class="nb">}</span>,
+  greenn/.style=<span class="nb">{</span>draw,thick,rounded corners,fill=green!20,inner sep=.3cm<span class="nb">}</span>,
+  grayn/.style=<span class="nb">{</span>draw,thick,rounded corners,fill=gray!20,inner sep=.3cm<span class="nb">}</span>,
+  to/.style=<span class="nb">{</span>
+    -&gt;,&gt;=stealth&#39;,shorten &gt;=1pt,semithick,font=<span class="k">\sffamily\footnotesize</span>
+  <span class="nb">}</span>,
+  from/.style=<span class="nb">{</span>
+    &lt;-,&gt;=stealth&#39;,shorten &gt;=1pt,semithick,font=<span class="k">\sffamily\footnotesize</span>
+  <span class="nb">}</span>,
+  tofrom/.style=<span class="nb">{</span>
+    &lt;-&gt;,&gt;=stealth&#39;,shorten &gt;=1pt,semithick,font=<span class="k">\sffamily\footnotesize</span>
+  <span class="nb">}</span>,
+  every node/.style=<span class="nb">{</span>align=center<span class="nb">}</span>,
+  squig/.style=<span class="nb">{</span>-&gt;,line join=round,decorate, decoration=<span class="nb">{</span>zigzag,
+    segment length=8,amplitude=2,post=lineto,post length=2pt<span class="nb">}}</span>
+<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\title</span><span class="nb">{</span>Beamer Snippets<span class="nb">}</span><span class="k">\author</span><span class="nb">{</span>Brandon Amos<span class="nb">}</span><span class="k">\date</span><span class="nb">{</span>July 2014<span class="nb">}</span>
+
+<span class="k">\section</span><span class="nb">{</span>Section 1<span class="nb">}</span>
+<span class="k">\subsection</span><span class="nb">{</span>Subsection A<span class="nb">}</span>
+Start content here.
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="//static.getclicky.com/js" type="text/javascript"></script>
+  <script type="text/javascript">
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+document.getElementById('fb-share').setAttribute('href', window.location);
+try{clicky.init(100602499);}catch(e){}
+  </script>
+</body>
+</html>
