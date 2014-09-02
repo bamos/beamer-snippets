@@ -351,6 +351,41 @@ object Foo <span class="nb">{</span>
 
       </div>
     </div>
+  </div><h2>timeline</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/timeline.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="c">% Reference: http://stackoverflow.com/questions/217834</span>
+<span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+   <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[
+      snake=zigzag,line before snake=5mm,line after snake=5mm
+    ]
+    <span class="k">\draw</span> (0,0) -- (2,0);
+    <span class="k">\draw</span><span class="na">[snake]</span> (2,0) -- (4,0);
+    <span class="k">\draw</span> (4,0) -- (5,0);
+    <span class="k">\draw</span><span class="na">[snake]</span> (5,0) -- (7,0);
+
+    <span class="k">\foreach</span> <span class="k">\x</span> in <span class="nb">{</span>0,1,2,4,5,7<span class="nb">}</span> <span class="k">\draw</span> (<span class="k">\x</span> cm,3pt) -- (<span class="k">\x</span> cm,-3pt);
+
+     <span class="k">\draw</span> (0,0) node[below=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb"> </span><span class="m">0</span><span class="nb"> </span><span class="s">$</span><span class="nb">}</span> node[above=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb">   </span><span class="s">$</span><span class="nb">}</span>;
+     <span class="k">\draw</span> (1,0) node[below=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb"> </span><span class="m">1</span><span class="nb"> </span><span class="s">$</span><span class="nb">}</span> node[above=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb"> </span><span class="m">10</span><span class="nb"> </span><span class="s">$</span><span class="nb">}</span>;
+     <span class="k">\draw</span> (2,0) node[below=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb"> </span><span class="m">2</span><span class="nb"> </span><span class="s">$</span><span class="nb">}</span> node[above=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb"> </span><span class="m">20</span><span class="nb"> </span><span class="s">$</span><span class="nb">}</span>;
+     <span class="k">\draw</span> (3,0) node[below=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb">  </span><span class="s">$</span><span class="nb">}</span> node[above=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb">  </span><span class="s">$</span><span class="nb">}</span>;
+     <span class="k">\draw</span> (4,0) node[below=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb"> </span><span class="m">5</span><span class="nb"> </span><span class="s">$</span><span class="nb">}</span> node[above=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb"> </span><span class="m">50</span><span class="nb"> </span><span class="s">$</span><span class="nb">}</span>;
+     <span class="k">\draw</span> (5,0) node[below=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb"> </span><span class="m">6</span><span class="nb"> </span><span class="s">$</span><span class="nb">}</span> node[above=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb"> </span><span class="m">60</span><span class="nb"> </span><span class="s">$</span><span class="nb">}</span>;
+     <span class="k">\draw</span> (6,0) node[below=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb">  </span><span class="s">$</span><span class="nb">}</span> node[above=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb">  </span><span class="s">$</span><span class="nb">}</span>;
+     <span class="k">\draw</span> (7,0) node[below=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb"> n </span><span class="s">$</span><span class="nb">}</span> node[above=3pt] <span class="nb">{</span><span class="s">$</span><span class="nb"> </span><span class="m">10</span><span class="nb">n </span><span class="s">$</span><span class="nb">}</span>;
+    <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
   </div><h2>two-column</h2>
   <div class="container-fluid">
     <div class="row">
@@ -455,7 +490,7 @@ object Foo <span class="nb">{</span>
 <span class="k">\setbeamertemplate</span><span class="nb">{</span>itemize items<span class="nb">}</span>[default]
 <span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
 <span class="k">\usepackage</span><span class="nb">{</span>parskip,graphics,tikz,multimedia,hyperref,ulem,multicol<span class="nb">}</span>
-<span class="k">\usetikzlibrary</span><span class="nb">{</span>arrows,positioning,shapes,decorations.pathmorphing<span class="nb">}</span>
+<span class="k">\usetikzlibrary</span><span class="nb">{</span>arrows,positioning,shapes,decorations.pathmorphing,snakes<span class="nb">}</span>
 <span class="k">\setlength</span><span class="nb">{</span><span class="k">\itemsep</span><span class="nb">}{</span>0pt<span class="nb">}</span><span class="k">\setlength</span><span class="nb">{</span><span class="k">\parskip</span><span class="nb">}{</span>0pt<span class="nb">}</span><span class="k">\setlength</span><span class="nb">{</span><span class="k">\parsep</span><span class="nb">}{</span>0pt<span class="nb">}</span>
 <span class="k">\graphicspath</span><span class="nb">{{</span>./images/<span class="nb">}}</span>
 
