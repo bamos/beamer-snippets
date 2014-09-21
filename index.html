@@ -95,6 +95,26 @@ introduction to LaTeX.
 
       </div>
     </div>
+  </div><h2>checkboxes</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/checkboxes.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+    <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>lp<span class="nb">{</span>0.8<span class="k">\textwidth</span><span class="nb">}}</span>
+      <span class="k">\uncheckedBox</span> <span class="nb">&amp;</span> Task A <span class="k">\\</span>
+      <span class="k">\uncheckedBox</span> <span class="nb">&amp;</span> Task B <span class="k">\\</span>
+      <span class="k">\checkedBox</span> <span class="nb">&amp;</span> Task C <span class="k">\\</span>
+    <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
   </div><h2>code-listing</h2>
   <div class="container-fluid">
     <div class="row">
@@ -198,9 +218,8 @@ object Foo <span class="nb">{</span>
   <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
     <span class="k">\item</span> Lorem ipsum dolor sit amet.
     <span class="k">\item</span> Consectetuer adipiscing elit.
-    <span class="k">\item</span>
       <span class="k">\begin</span><span class="nb">{</span>multicols<span class="nb">}{</span>2<span class="nb">}</span>
-        <span class="k">\foreach</span> <span class="k">\i</span> in <span class="nb">{</span>1,10<span class="nb">}</span> <span class="nb">{</span><span class="k">\item</span> <span class="k">\i</span><span class="nb">}</span>
+        <span class="k">\foreach</span> <span class="k">\i</span> in <span class="nb">{</span>1,...,10<span class="nb">}</span> <span class="nb">{</span><span class="k">\item</span> <span class="k">\i</span><span class="nb">}</span>
       <span class="k">\end</span><span class="nb">{</span>multicols<span class="nb">}</span>
     <span class="k">\item</span> Aenean commodo ligula eget dolor.
   <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
@@ -224,6 +243,27 @@ object Foo <span class="nb">{</span>
 <span class="k">\node</span> at (4,0.5) () <span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[draft,width=0.3\textwidth,height=5cm]</span><span class="nb">{</span>c.png<span class="nb">}}</span>;
   <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
 <span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>references</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/references.png" width="100%"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile,allowframebreaks]
+  <span class="c">% In your presentation, remove `\nocite` here and</span>
+  <span class="c">% use `\cite` throughout the presentation.</span>
+  <span class="k">\nocite</span><span class="nb">{</span>*<span class="nb">}</span>
+
+  <span class="k">\frametitle</span><span class="nb">{</span>References<span class="nb">}</span>
+  <span class="k">\scriptsize</span>
+  <span class="k">\bibliographystyle</span><span class="nb">{</span>apalike<span class="nb">}</span>
+  <span class="k">\bibliography</span><span class="nb">{</span>refs<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
 </pre></div>
 
       </div>
@@ -550,6 +590,9 @@ object Foo <span class="nb">{</span>
   squig/.style=<span class="nb">{</span>-&gt;,line join=round,decorate, decoration=<span class="nb">{</span>zigzag,
     segment length=8,amplitude=2,post=lineto,post length=2pt<span class="nb">}}</span>
 <span class="nb">}</span>
+
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\uncheckedBox</span><span class="nb">}{</span><span class="k">\ensuremath</span><span class="nb">{</span><span class="k">\square</span><span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\checkedBox</span><span class="nb">}{</span><span class="k">\ensuremath</span><span class="nb">{</span><span class="k">\text</span><span class="nb">{</span><span class="k">\rlap</span><span class="nb">{</span><span class="k">\checkmark</span><span class="nb">}}</span><span class="k">\square</span><span class="nb">}}</span>
 
 <span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
 <span class="k">\title</span><span class="nb">{</span>Beamer Snippets<span class="nb">}</span><span class="k">\author</span><span class="nb">{</span>Brandon Amos<span class="nb">}</span><span class="k">\date</span><span class="nb">{</span>July 2014<span class="nb">}</span>

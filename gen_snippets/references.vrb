@@ -1,0 +1,6 @@
+\nocite{*}
+
+  \frametitle{References}
+  \scriptsize
+  \bibliographystyle{apalike}
+  \bibliography{refs}

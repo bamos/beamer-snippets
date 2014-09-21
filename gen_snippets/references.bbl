@@ -1,0 +1,42 @@
+\begin{thebibliography}{}
+
+\bibitem[Amos et~al., 2014]{amos2014fortran}
+Amos, B., Easterling, D., Watson, L., Castle, B., Trosset, M., and Thacker, W.
+  (2014).
+\newblock Fortran 95 implementation of qnstop for global and stochastic
+  optimization.
+\newblock In {\em 2014 Spring Simulation Multiconference, 22nd High Performance
+  Computer Symposium, Society for Modeling and Simulation International}.
+
+\bibitem[Amos et~al., tted]{amos2014QNSTOP}
+Amos, B., Easterling, D., Watson, L., Thacker, W., Castle, B., and Trosset, M.
+  (submitted).
+\newblock {QNSTOP-QuasiNewton Algorithm for Stochastic Optimization}.
+
+\bibitem[Amos and Tompkins, tted]{amos2014performance}
+Amos, B. and Tompkins, D. (submitted).
+\newblock Performance study of spindle, a web analytics query engine
+  implemented in spark.
+
+\bibitem[Amos et~al., 2013]{amos2013applying}
+Amos, B., Turner, H., and White, J. (2013).
+\newblock Applying machine learning classifiers to dynamic android malware
+  detection at scale.
+\newblock In {\em IWCMC'13 Security, Trust and Privacy Symposium}.
+
+\bibitem[Andrew et~al., 2014]{andrew2014global}
+Andrew, T., Amos, B., Easterling, D., Oguz, C., Baumann, W., Tyson, J., and
+  Watson, L. (2014).
+\newblock Global parameter estimation for a eukaryotic cell cycle model in
+  systems biology.
+\newblock In {\em 2014 Summer Simulation Multiconference, Society for Modeling
+  and Simulation International}.
+
+\bibitem[Turner et~al., pear]{turner2014bad}
+Turner, H., White, J., Amos, B., Camelio, J., Williams, C., and Parker, R. (to
+  appear).
+\newblock Bad parts: Are our manufacturing systems at risk of silent
+  cyber-attacks?
+\newblock {\em IEEE Security and Privacy Magazine}.
+
+\end{thebibliography}

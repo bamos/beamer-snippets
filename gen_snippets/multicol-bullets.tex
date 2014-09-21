@@ -65,6 +65,9 @@
     segment length=8,amplitude=2,post=lineto,post length=2pt}}
 }
 
+\newcommand{\uncheckedBox}{\ensuremath{\square}}
+\newcommand{\checkedBox}{\ensuremath{\text{\rlap{\checkmark}}\square}}
+
 \begin{document}
 \title{Beamer Snippets}\author{Brandon Amos}\date{July 2014}
 
@@ -74,9 +77,8 @@
   \begin{itemize}
     \item Lorem ipsum dolor sit amet.
     \item Consectetuer adipiscing elit.
-    \item
       \begin{multicols}{2}
-        \foreach \i in {1,10} {\item \i}
+        \foreach \i in {1,...,10} {\item \i}
       \end{multicols}
     \item Aenean commodo ligula eget dolor.
   \end{itemize}
