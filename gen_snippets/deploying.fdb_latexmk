@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1411339785 "deploying.tex" "deploying.pdf" "deploying" 1411339786
+["pdflatex"] 1411341280 "deploying.tex" "deploying.pdf" "deploying" 1411341282
   "/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/jknappen/ec/ecss0500.tfm" 1136768653 3584 3cb5b0e5e7e89823423413806ab1d938 ""
@@ -212,10 +212,10 @@
   "/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1401025944 1445653 26a0aacf3d70032b1ec192e8c7792117 ""
   "/usr/local/texlive/2014/texmf-var/web2c/pdftex/pdflatex.fmt" 1401025990 3832012 904d82bdcc8abf2b1cd296990b82553b ""
   "/usr/local/texlive/2014/texmf.cnf" 1401025936 577 a59edbde8d3a8c549d0eeaab1739e2ff ""
-  "deploying.aux" 1411339786 1727 c9c2374d42f9ad9c98ee90f5cf6803b5 ""
-  "deploying.nav" 1411339786 619 d92040404585aadd6c4b7519d66db4f4 ""
-  "deploying.out" 1411339786 105 47c3d1cee2ce101b77fdc83240d2bda7 ""
-  "deploying.tex" 1411339760 3509 4b43ae7c51249ccf637d9bbf5ea01784 ""
+  "deploying.aux" 1411341282 1727 c9c2374d42f9ad9c98ee90f5cf6803b5 ""
+  "deploying.nav" 1411341282 619 d92040404585aadd6c4b7519d66db4f4 ""
+  "deploying.out" 1411341282 105 47c3d1cee2ce101b77fdc83240d2bda7 ""
+  "deploying.tex" 1411341257 3509 4b43ae7c51249ccf637d9bbf5ea01784 ""
   (generated)
   "deploying.out"
   "deploying.toc"

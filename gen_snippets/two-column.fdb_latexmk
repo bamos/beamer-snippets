@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1411339850 "two-column.tex" "two-column.pdf" "two-column" 1411339852
+["pdflatex"] 1411341354 "two-column.tex" "two-column.pdf" "two-column" 1411341356
   "/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/jknappen/ec/ecss0500.tfm" 1136768653 3584 3cb5b0e5e7e89823423413806ab1d938 ""
@@ -236,10 +236,10 @@
   "/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1401025944 1445653 26a0aacf3d70032b1ec192e8c7792117 ""
   "/usr/local/texlive/2014/texmf-var/web2c/pdftex/pdflatex.fmt" 1401025990 3832012 904d82bdcc8abf2b1cd296990b82553b ""
   "/usr/local/texlive/2014/texmf.cnf" 1401025936 577 a59edbde8d3a8c549d0eeaab1739e2ff ""
-  "two-column.aux" 1411339852 1727 2ed95d8528a9f8229203f0174b56c9e2 ""
-  "two-column.nav" 1411339852 619 d92040404585aadd6c4b7519d66db4f4 ""
-  "two-column.out" 1411339852 105 47c3d1cee2ce101b77fdc83240d2bda7 ""
-  "two-column.tex" 1411339760 3369 c602d2d6a46d7546f597ccf00eda1fe3 ""
+  "two-column.aux" 1411341356 1727 2ed95d8528a9f8229203f0174b56c9e2 ""
+  "two-column.nav" 1411341356 619 d92040404585aadd6c4b7519d66db4f4 ""
+  "two-column.out" 1411341356 105 47c3d1cee2ce101b77fdc83240d2bda7 ""
+  "two-column.tex" 1411341257 3369 c602d2d6a46d7546f597ccf00eda1fe3 ""
   (generated)
   "two-column.out"
   "two-column.log"
