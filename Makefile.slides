@@ -7,5 +7,5 @@ all: $(PNG)
 	latexmk --pdf $<
 
 %.png: %.pdf
-	convert -flatten -density 300 -trim $< -quality 100 $@
+	convert -flatten -density 300 -trim $<[0] -quality 100 $@
 	rm *.aux *.log *.nav *.out *.snm *.toc
