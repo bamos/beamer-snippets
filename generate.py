@@ -21,7 +21,6 @@ static_dir = "static"
 
 shutil.rmtree(dist_dir, ignore_errors=True)
 shutil.copytree(static_dir, dist_dir)
-os.makedirs(dist_dir+"/"+gen_snippets_dir)
 
 snippets = []
 for subdir, dirs, files in os.walk(snippets_dir):
