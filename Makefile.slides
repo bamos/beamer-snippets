@@ -4,8 +4,7 @@ PNG=$(SRC:.tex=.png)
 all: $(PNG)
 
 %.pdf: %.tex
-	pdflatex --halt-on-error $<
-	pdflatex --halt-on-error $<
+	latexmk --pdf $<
 
 %.png: %.pdf
 	convert -flatten -density 300 -trim $< -quality 100 $@
