@@ -71,35 +71,11 @@ See <a href="https://www.tug.org/begin.html">here</a> for a further
 introduction to LaTeX.
 </div>
 
-<h2>0-title</h2>
+<h2>checkboxes</h2>
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-6">
-        <img src=".//gen_snippets/0-title.png" width="100%"></img>
-      </div>
-      <div class="col-xs-6">
-        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\titlepage</span><span class="nb">}</span>
-</pre></div>
-
-      </div>
-    </div>
-  </div><h2>1-table-of-contents</h2>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-6">
-        <img src=".//gen_snippets/1-table-of-contents.png" width="100%"></img>
-      </div>
-      <div class="col-xs-6">
-        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span>Table of Contents.<span class="nb">}</span><span class="k">\tableofcontents</span><span class="nb">}</span>
-</pre></div>
-
-      </div>
-    </div>
-  </div><h2>checkboxes</h2>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-6">
-        <img src=".//gen_snippets/checkboxes.png" width="100%"></img>
+        <img src=".//gen_snippets/checkboxes.png" width="100%" style="border: 1px solid #000000"></img>
       </div>
       <div class="col-xs-6">
         <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
@@ -115,11 +91,30 @@ introduction to LaTeX.
 
       </div>
     </div>
+  </div><h2>overlayed-images</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/overlayed-images.png" width="100%" style="border: 1px solid #000000"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[
+    every node/.style=<span class="nb">{</span>draw,line width=2pt,inner sep=0,outer sep=0<span class="nb">}</span>]
+<span class="k">\node</span> at (0,0) () <span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[draft,width=0.9\textwidth,height=5cm]</span><span class="nb">{</span>a.png<span class="nb">}}</span>;
+<span class="k">\node</span> at (1.5,-2.5) () <span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[draft,width=0.4\textwidth,height=2cm]</span><span class="nb">{</span>b.png<span class="nb">}}</span>;
+<span class="k">\node</span> at (4,0.5) () <span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[draft,width=0.3\textwidth,height=5cm]</span><span class="nb">{</span>c.png<span class="nb">}}</span>;
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
   </div><h2>code-listing</h2>
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-6">
-        <img src=".//gen_snippets/code-listing.png" width="100%"></img>
+        <img src=".//gen_snippets/code-listing.png" width="100%" style="border: 1px solid #000000"></img>
       </div>
       <div class="col-xs-6">
         <div class="highlight"><pre><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
@@ -136,11 +131,60 @@ object Foo <span class="nb">{</span>
 
       </div>
     </div>
+  </div><h2>two-tables-with-arrow</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/two-tables-with-arrow.png" width="100%" style="border: 1px solid #000000"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  Event A <span class="s">$</span><span class="nv">\rightarrow</span><span class="s">$</span> Event B <span class="s">$</span><span class="nv">\rightarrow</span><span class="s">$</span> Event C <span class="k">\\</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\node</span><span class="na">[]</span> (n1) <span class="nb">{</span>
+      <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>cc<span class="nb">}</span>
+        Lorem <span class="nb">&amp;</span> ipsum <span class="k">\\</span>
+        dolor <span class="nb">&amp;</span> sit <span class="k">\\</span>
+        amet. <span class="nb">&amp;</span> Consectetuer <span class="k">\\</span>
+        adipiscing <span class="nb">&amp;</span> elit.
+      <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+    <span class="nb">}</span>;
+
+    <span class="k">\node</span><span class="na">[right=2cm of n1]</span> (n2) <span class="nb">{</span>
+      <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>cc<span class="nb">}</span>
+        Aenean <span class="nb">&amp;</span> commodo <span class="k">\\</span>
+        ligula <span class="nb">&amp;</span> eget <span class="k">\\</span>
+        dolor. <span class="nb">&amp;</span>
+      <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+    <span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (n1) -- node[midway,above]<span class="nb">{</span>Event C<span class="nb">}</span> (n2);
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>for-loop</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/for-loop.png" width="100%" style="border: 1px solid #000000"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+    <span class="k">\foreach</span> <span class="k">\val</span> in <span class="nb">{</span>Lorem ipsum,dolor sit,amet.<span class="nb">}</span> <span class="nb">{</span> <span class="k">\item</span> <span class="k">\val</span> <span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
   </div><h2>deploying</h2>
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-6">
-        <img src=".//gen_snippets/deploying.png" width="100%"></img>
+        <img src=".//gen_snippets/deploying.png" width="100%" style="border: 1px solid #000000"></img>
       </div>
       <div class="col-xs-6">
         <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
@@ -167,200 +211,11 @@ object Foo <span class="nb">{</span>
 
       </div>
     </div>
-  </div><h2>flowchart</h2>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-6">
-        <img src=".//gen_snippets/flowchart.png" width="100%"></img>
-      </div>
-      <div class="col-xs-6">
-        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
-  <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
-  <span class="k">\scalebox</span><span class="nb">{</span>0.7<span class="nb">}{</span>
-  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
-    <span class="k">\node</span><span class="na">[bn]</span> (a) <span class="nb">{</span>Event A.<span class="nb">}</span>;
-    <span class="k">\node</span><span class="na">[on,right=0.5cm of a]</span> (b) <span class="nb">{</span>Event B.<span class="nb">}</span>;
-    <span class="k">\node</span><span class="na">[rn,right=0.5cm of b]</span> (c) <span class="nb">{</span>Event C.<span class="nb">}</span>;
-    <span class="k">\draw</span><span class="na">[to]</span> (a) -- (b);
-    <span class="k">\draw</span><span class="na">[to]</span> (b) -- (c);
-  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
-  <span class="nb">}</span>
-  <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
-<span class="nb">}</span>
-</pre></div>
-
-      </div>
-    </div>
-  </div><h2>for-loop</h2>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-6">
-        <img src=".//gen_snippets/for-loop.png" width="100%"></img>
-      </div>
-      <div class="col-xs-6">
-        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
-  <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
-    <span class="k">\foreach</span> <span class="k">\val</span> in <span class="nb">{</span>Lorem ipsum,dolor sit,amet.<span class="nb">}</span> <span class="nb">{</span> <span class="k">\item</span> <span class="k">\val</span> <span class="nb">}</span>
-  <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
-<span class="nb">}</span>
-</pre></div>
-
-      </div>
-    </div>
-  </div><h2>multicol-bullets</h2>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-6">
-        <img src=".//gen_snippets/multicol-bullets.png" width="100%"></img>
-      </div>
-      <div class="col-xs-6">
-        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
-  <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
-    <span class="k">\item</span> Lorem ipsum dolor sit amet.
-    <span class="k">\item</span> Consectetuer adipiscing elit.
-      <span class="k">\begin</span><span class="nb">{</span>multicols<span class="nb">}{</span>2<span class="nb">}</span>
-        <span class="k">\foreach</span> <span class="k">\i</span> in <span class="nb">{</span>1,...,10<span class="nb">}</span> <span class="nb">{</span><span class="k">\item</span> <span class="k">\i</span><span class="nb">}</span>
-      <span class="k">\end</span><span class="nb">{</span>multicols<span class="nb">}</span>
-    <span class="k">\item</span> Aenean commodo ligula eget dolor.
-  <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
-<span class="nb">}</span>
-</pre></div>
-
-      </div>
-    </div>
-  </div><h2>overlayed-images</h2>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-6">
-        <img src=".//gen_snippets/overlayed-images.png" width="100%"></img>
-      </div>
-      <div class="col-xs-6">
-        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
-  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[
-    every node/.style=<span class="nb">{</span>draw,line width=2pt,inner sep=0,outer sep=0<span class="nb">}</span>]
-<span class="k">\node</span> at (0,0) () <span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[draft,width=0.9\textwidth,height=5cm]</span><span class="nb">{</span>a.png<span class="nb">}}</span>;
-<span class="k">\node</span> at (1.5,-2.5) () <span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[draft,width=0.4\textwidth,height=2cm]</span><span class="nb">{</span>b.png<span class="nb">}}</span>;
-<span class="k">\node</span> at (4,0.5) () <span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[draft,width=0.3\textwidth,height=5cm]</span><span class="nb">{</span>c.png<span class="nb">}}</span>;
-  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
-<span class="nb">}</span>
-</pre></div>
-
-      </div>
-    </div>
-  </div><h2>references</h2>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-6">
-        <img src=".//gen_snippets/references.png" width="100%"></img>
-      </div>
-      <div class="col-xs-6">
-        <div class="highlight"><pre><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile,allowframebreaks]
-  <span class="c">% In your presentation, remove `\nocite` here and</span>
-  <span class="c">% use `\cite` throughout the presentation.</span>
-  <span class="k">\nocite</span><span class="nb">{</span>*<span class="nb">}</span>
-
-  <span class="k">\frametitle</span><span class="nb">{</span>References<span class="nb">}</span>
-  <span class="k">\scriptsize</span>
-  <span class="k">\bibliographystyle</span><span class="nb">{</span>apalike<span class="nb">}</span>
-  <span class="k">\bibliography</span><span class="nb">{</span>refs<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
-</pre></div>
-
-      </div>
-    </div>
-  </div><h2>request-response</h2>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-6">
-        <img src=".//gen_snippets/request-response.png" width="100%"></img>
-      </div>
-      <div class="col-xs-6">
-        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
-  <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
-  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
-    <span class="k">\node</span><span class="na">[bn]</span> (query) <span class="nb">{{</span><span class="k">\tt</span> http://server/query<span class="nb">}}</span>;
-
-    <span class="k">\node</span><span class="na">[greenn,right=of query]</span> (spray) <span class="nb">{</span>Spray<span class="nb">}</span>;
-    <span class="k">\draw</span><span class="na">[squig]</span> (3.3cm,-0.6cm) -- (3.3cm,-1.5cm);
-    <span class="k">\draw</span><span class="na">[squig]</span> (3.8cm,-0.6cm) -- (3.8cm,-1.5cm);
-    <span class="k">\draw</span><span class="na">[fill=yellow!20]</span> (4.1cm,-1.6cm) rectangle (4.5cm,-0.5cm) <span class="nb">{}</span>;
-    <span class="k">\draw</span><span class="na">[squig]</span> (4.3cm,-0.6cm) -- (4.3cm,-1.5cm);
-    <span class="k">\node</span><span class="na">[yn,right=of spray]</span> (actor) <span class="nb">{</span>Actor<span class="nb">}</span>;
-
-    <span class="k">\node</span> at (1.9cm,1.1cm) <span class="nb">{{</span><span class="k">\footnotesize</span> HTTP Request<span class="nb">}}</span>;
-    <span class="k">\node</span> at (1.7cm,-1.2cm) <span class="nb">{{</span><span class="k">\footnotesize</span> HTTP Response<span class="nb">}</span><span class="k">\\</span><span class="nb">{</span><span class="k">\footnotesize</span> (HTML or text)<span class="nb">}}</span>;
-    <span class="k">\draw</span><span class="na">[to]</span> (query) edge [bend left] (spray);
-    <span class="k">\draw</span><span class="na">[to]</span> (spray) edge [bend left] (query);
-
-    <span class="k">\node</span> at (5.5cm,1.1cm) <span class="nb">{{</span><span class="k">\footnotesize</span> Spray Request<span class="nb">}}</span>;
-    <span class="k">\node</span> at (5.7cm,-1.2cm) <span class="nb">{{</span><span class="k">\footnotesize</span> Spray Response<span class="nb">}</span> <span class="k">\\</span> <span class="nb">{</span><span class="k">\footnotesize</span> (Future)<span class="nb">}}</span>;
-    <span class="k">\draw</span><span class="na">[to]</span> (spray) edge [bend left] (actor);
-    <span class="k">\draw</span><span class="na">[to]</span> (actor) edge [bend left] (spray);
-  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
-  <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
-<span class="nb">}</span>
-</pre></div>
-
-      </div>
-    </div>
-  </div><h2>simple-bullets</h2>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-6">
-        <img src=".//gen_snippets/simple-bullets.png" width="100%"></img>
-      </div>
-      <div class="col-xs-6">
-        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
-  <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
-    <span class="k">\item</span> Lorem ipsum dolor sit amet.
-    <span class="k">\item</span> Consectetuer adipiscing elit.
-    <span class="k">\item</span> Aenean commodo ligula eget dolor.
-  <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
-<span class="nb">}</span>
-</pre></div>
-
-      </div>
-    </div>
-  </div><h2>simple-graphic</h2>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-6">
-        <img src=".//gen_snippets/simple-graphic.png" width="100%"></img>
-      </div>
-      <div class="col-xs-6">
-        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
-  <span class="k">\includegraphics</span><span class="na">[draft,width=0.9\textwidth,height=5cm]</span><span class="nb">{</span>a.png<span class="nb">}</span>
-<span class="nb">}</span>
-</pre></div>
-
-      </div>
-    </div>
-  </div><h2>simple-table</h2>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-6">
-        <img src=".//gen_snippets/simple-table.png" width="100%"></img>
-      </div>
-      <div class="col-xs-6">
-        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
-  <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
-    <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>cc<span class="nb">}</span>
-      Lorem <span class="nb">&amp;</span> ipsum <span class="k">\\</span> <span class="k">\hline</span>
-      dolor <span class="nb">&amp;</span> sit <span class="k">\\</span>
-      amet. <span class="nb">&amp;</span> Consectetuer <span class="k">\\</span>
-      adipiscing <span class="nb">&amp;</span> elit.
-    <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
-  <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
-<span class="nb">}</span>
-</pre></div>
-
-      </div>
-    </div>
   </div><h2>threads</h2>
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-6">
-        <img src=".//gen_snippets/threads.png" width="100%"></img>
+        <img src=".//gen_snippets/threads.png" width="100%" style="border: 1px solid #000000"></img>
       </div>
       <div class="col-xs-6">
         <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
@@ -395,7 +250,7 @@ object Foo <span class="nb">{</span>
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-6">
-        <img src=".//gen_snippets/timeline.png" width="100%"></img>
+        <img src=".//gen_snippets/timeline.png" width="100%" style="border: 1px solid #000000"></img>
       </div>
       <div class="col-xs-6">
         <div class="highlight"><pre><span class="c">% Reference: http://stackoverflow.com/questions/217834</span>
@@ -426,11 +281,100 @@ object Foo <span class="nb">{</span>
 
       </div>
     </div>
+  </div><h2>flowchart</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/flowchart.png" width="100%" style="border: 1px solid #000000"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+  <span class="k">\scalebox</span><span class="nb">{</span>0.7<span class="nb">}{</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\node</span><span class="na">[bn]</span> (a) <span class="nb">{</span>Event A.<span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[on,right=0.5cm of a]</span> (b) <span class="nb">{</span>Event B.<span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[rn,right=0.5cm of b]</span> (c) <span class="nb">{</span>Event C.<span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (a) -- (b);
+    <span class="k">\draw</span><span class="na">[to]</span> (b) -- (c);
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+  <span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>1-table-of-contents</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/1-table-of-contents.png" width="100%" style="border: 1px solid #000000"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span>Table of Contents.<span class="nb">}</span><span class="k">\tableofcontents</span><span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>request-response</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/request-response.png" width="100%" style="border: 1px solid #000000"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\node</span><span class="na">[bn]</span> (query) <span class="nb">{{</span><span class="k">\tt</span> http://server/query<span class="nb">}}</span>;
+
+    <span class="k">\node</span><span class="na">[greenn,right=of query]</span> (spray) <span class="nb">{</span>Spray<span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[squig]</span> (3.3cm,-0.6cm) -- (3.3cm,-1.5cm);
+    <span class="k">\draw</span><span class="na">[squig]</span> (3.8cm,-0.6cm) -- (3.8cm,-1.5cm);
+    <span class="k">\draw</span><span class="na">[fill=yellow!20]</span> (4.1cm,-1.6cm) rectangle (4.5cm,-0.5cm) <span class="nb">{}</span>;
+    <span class="k">\draw</span><span class="na">[squig]</span> (4.3cm,-0.6cm) -- (4.3cm,-1.5cm);
+    <span class="k">\node</span><span class="na">[yn,right=of spray]</span> (actor) <span class="nb">{</span>Actor<span class="nb">}</span>;
+
+    <span class="k">\node</span> at (1.9cm,1.1cm) <span class="nb">{{</span><span class="k">\footnotesize</span> HTTP Request<span class="nb">}}</span>;
+    <span class="k">\node</span> at (1.7cm,-1.2cm) <span class="nb">{{</span><span class="k">\footnotesize</span> HTTP Response<span class="nb">}</span><span class="k">\\</span><span class="nb">{</span><span class="k">\footnotesize</span> (HTML or text)<span class="nb">}}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (query) edge [bend left] (spray);
+    <span class="k">\draw</span><span class="na">[to]</span> (spray) edge [bend left] (query);
+
+    <span class="k">\node</span> at (5.5cm,1.1cm) <span class="nb">{{</span><span class="k">\footnotesize</span> Spray Request<span class="nb">}}</span>;
+    <span class="k">\node</span> at (5.7cm,-1.2cm) <span class="nb">{{</span><span class="k">\footnotesize</span> Spray Response<span class="nb">}</span> <span class="k">\\</span> <span class="nb">{</span><span class="k">\footnotesize</span> (Future)<span class="nb">}}</span>;
+    <span class="k">\draw</span><span class="na">[to]</span> (spray) edge [bend left] (actor);
+    <span class="k">\draw</span><span class="na">[to]</span> (actor) edge [bend left] (spray);
+  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>simple-bullets</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/simple-bullets.png" width="100%" style="border: 1px solid #000000"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+    <span class="k">\item</span> Lorem ipsum dolor sit amet.
+    <span class="k">\item</span> Consectetuer adipiscing elit.
+    <span class="k">\item</span> Aenean commodo ligula eget dolor.
+  <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
   </div><h2>two-column</h2>
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-6">
-        <img src=".//gen_snippets/two-column.png" width="100%"></img>
+        <img src=".//gen_snippets/two-column.png" width="100%" style="border: 1px solid #000000"></img>
       </div>
       <div class="col-xs-6">
         <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
@@ -457,34 +401,90 @@ object Foo <span class="nb">{</span>
 
       </div>
     </div>
-  </div><h2>two-tables-with-arrow</h2>
+  </div><h2>0-title</h2>
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-6">
-        <img src=".//gen_snippets/two-tables-with-arrow.png" width="100%"></img>
+        <img src=".//gen_snippets/0-title.png" width="100%" style="border: 1px solid #000000"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\titlepage</span><span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>multicol-bullets</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/multicol-bullets.png" width="100%" style="border: 1px solid #000000"></img>
       </div>
       <div class="col-xs-6">
         <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
-  Event A <span class="s">$</span><span class="nv">\rightarrow</span><span class="s">$</span> Event B <span class="s">$</span><span class="nv">\rightarrow</span><span class="s">$</span> Event C <span class="k">\\</span>
-  <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
-    <span class="k">\node</span><span class="na">[]</span> (n1) <span class="nb">{</span>
-      <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>cc<span class="nb">}</span>
-        Lorem <span class="nb">&amp;</span> ipsum <span class="k">\\</span>
-        dolor <span class="nb">&amp;</span> sit <span class="k">\\</span>
-        amet. <span class="nb">&amp;</span> Consectetuer <span class="k">\\</span>
-        adipiscing <span class="nb">&amp;</span> elit.
-      <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
-    <span class="nb">}</span>;
+  <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+    <span class="k">\item</span> Lorem ipsum dolor sit amet.
+    <span class="k">\item</span> Consectetuer adipiscing elit.
+      <span class="k">\begin</span><span class="nb">{</span>multicols<span class="nb">}{</span>2<span class="nb">}</span>
+        <span class="k">\foreach</span> <span class="k">\i</span> in <span class="nb">{</span>1,...,10<span class="nb">}</span> <span class="nb">{</span><span class="k">\item</span> <span class="k">\i</span><span class="nb">}</span>
+      <span class="k">\end</span><span class="nb">{</span>multicols<span class="nb">}</span>
+    <span class="k">\item</span> Aenean commodo ligula eget dolor.
+  <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
 
-    <span class="k">\node</span><span class="na">[right=2cm of n1]</span> (n2) <span class="nb">{</span>
-      <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>cc<span class="nb">}</span>
-        Aenean <span class="nb">&amp;</span> commodo <span class="k">\\</span>
-        ligula <span class="nb">&amp;</span> eget <span class="k">\\</span>
-        dolor. <span class="nb">&amp;</span>
-      <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
-    <span class="nb">}</span>;
-    <span class="k">\draw</span><span class="na">[to]</span> (n1) -- node[midway,above]<span class="nb">{</span>Event C<span class="nb">}</span> (n2);
-  <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+      </div>
+    </div>
+  </div><h2>references</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/references.png" width="100%" style="border: 1px solid #000000"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile,allowframebreaks]
+  <span class="c">% In your presentation, remove `\nocite` here and</span>
+  <span class="c">% use `\cite` throughout the presentation.</span>
+  <span class="k">\nocite</span><span class="nb">{</span>*<span class="nb">}</span>
+
+  <span class="k">\frametitle</span><span class="nb">{</span>References<span class="nb">}</span>
+  <span class="k">\scriptsize</span>
+  <span class="k">\bibliographystyle</span><span class="nb">{</span>apalike<span class="nb">}</span>
+  <span class="k">\bibliography</span><span class="nb">{</span>refs<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>simple-graphic</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/simple-graphic.png" width="100%" style="border: 1px solid #000000"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\includegraphics</span><span class="na">[draft,width=0.9\textwidth,height=5cm]</span><span class="nb">{</span>a.png<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+
+      </div>
+    </div>
+  </div><h2>simple-table</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src=".//gen_snippets/simple-table.png" width="100%" style="border: 1px solid #000000"></img>
+      </div>
+      <div class="col-xs-6">
+        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\frametitle</span><span class="nb">{</span><span class="k">\insertsection</span><span class="nb">}</span><span class="k">\framesubtitle</span><span class="nb">{</span><span class="k">\insertsubsection</span><span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+    <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>cc<span class="nb">}</span>
+      Lorem <span class="nb">&amp;</span> ipsum <span class="k">\\</span> <span class="k">\hline</span>
+      dolor <span class="nb">&amp;</span> sit <span class="k">\\</span>
+      amet. <span class="nb">&amp;</span> Consectetuer <span class="k">\\</span>
+      adipiscing <span class="nb">&amp;</span> elit.
+    <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
 <span class="nb">}</span>
 </pre></div>
 
