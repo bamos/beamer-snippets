@@ -22,27 +22,31 @@ static_dir = "static"
 shutil.rmtree(dist_dir, ignore_errors=True)
 shutil.copytree(static_dir, dist_dir)
 
-snippets = []
+fnames = []
 for subdir, dirs, files in os.walk(snippets_dir):
   for fname in files:
-    trimmedName, ext = os.path.splitext(fname)
-    full_path = subdir + "/" + fname
-    if ext == '.tex':
-      with open(full_path, "r") as snippet_f:
-        gen_tex_name = gen_snippets_dir+"/"+fname
-        gen_pdf_name = gen_snippets_dir+"/"+trimmedName+".pdf"
-        gen_png_name = gen_snippets_dir+"/"+trimmedName+".png"
-        snippet_content = snippet_f.read().strip()
-        with open(dist_dir+"/"+gen_tex_name, "w") as f:
-          f.write(env.get_template("base.jinja.tex").render(
-            content=snippet_content
-          ))
-        snippets.append({
-          'fname': trimmedName,
-          'pdf': gen_pdf_name,
-          'png': gen_png_name,
-          'content': highlight(snippet_content, TexLexer(), HtmlFormatter())
-        })
+    fnames.append(fname)
+
+snippets = []
+for fname in sorted(fnames):
+  trimmedName, ext = os.path.splitext(fname)
+  full_path = subdir + "/" + fname
+  if ext == '.tex':
+    with open(full_path, "r") as snippet_f:
+      gen_tex_name = gen_snippets_dir+"/"+fname
+      gen_pdf_name = gen_snippets_dir+"/"+trimmedName+".pdf"
+      gen_png_name = gen_snippets_dir+"/"+trimmedName+".png"
+      snippet_content = snippet_f.read().strip()
+      with open(dist_dir+"/"+gen_tex_name, "w") as f:
+        f.write(env.get_template("base.jinja.tex").render(
+          content=snippet_content
+        ))
+      snippets.append({
+        'fname': trimmedName,
+        'pdf': gen_pdf_name,
+        'png': gen_png_name,
+        'content': highlight(snippet_content, TexLexer(), HtmlFormatter())
+      })
 
 p = Popen(['make', "-f", "../../Makefile.slides", "-C",
   dist_dir+"/"+gen_snippets_dir, "-j", "8"], stdout=PIPE, stderr=PIPE)
