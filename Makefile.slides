@@ -8,4 +8,3 @@ all: $(PNG)
 
 %.png: %.pdf
 	convert -flatten -density 300 -trim $<[0] -quality 100 $@
-	rm *.aux *.log *.nav *.out *.snm *.toc
