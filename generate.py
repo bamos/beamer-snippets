@@ -45,7 +45,7 @@ for subdir, dirs, files in os.walk(snippets_dir):
         })
 
 p = Popen(['make', "-f", "../../Makefile.slides", "-C",
-  dist_dir+"/"+gen_snippets_dir], stdout=PIPE, stderr=PIPE)
+  dist_dir+"/"+gen_snippets_dir, "-j", "8"], stdout=PIPE, stderr=PIPE)
 out = p.communicate()
 if out[1]:
   print("Warning: Make stderr non-empty.")
