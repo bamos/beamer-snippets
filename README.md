@@ -9,7 +9,7 @@ previous presentations.
 This repository contains a collection of snippets I'm gathering from
 my papers and presentations, which are best viewed on
 [this webpage](http://bamos.github.io/beamer-snippets/).
-See also my other LaTeX projects at [bamos/cv][cv] and
+See my other LaTeX projects at [bamos/cv][cv] and
 [bamos/latex-templates][latex-templates].
 
 ![Screenshot](https://raw.githubusercontent.com/bamos/beamer-snippets/master/screenshot.png?raw=true)
