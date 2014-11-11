@@ -78,7 +78,8 @@ introduction to LaTeX.
         <img src=".//gen_snippets/0-title.png" width="100%" style="border: 1px solid #000000"></img>
       </div>
       <div class="col-xs-6">
-        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\titlepage</span><span class="nb">}</span>
+        <div class="highlight"><pre><span class="nb">{</span><span class="k">\setbeamertemplate</span><span class="nb">{</span>footline<span class="nb">}{}</span><span class="k">\setbeamertemplate</span><span class="nb">{</span>headline<span class="nb">}{}</span><span class="k">\frame</span><span class="nb">{</span><span class="k">\titlepage</span><span class="nb">}}</span>
+<span class="k">\addtocounter</span><span class="nb">{</span>framenumber<span class="nb">}{</span>-1<span class="nb">}</span>
 </pre></div>
 
       </div>
@@ -540,7 +541,7 @@ object Foo <span class="nb">{</span>
   numberstyle=<span class="k">\tiny</span>,stepnumber=1,numbersep=5pt,
   backgroundcolor=<span class="k">\color</span><span class="nb">{</span>white<span class="nb">}</span>,frame=single,tabsize=2,
   showspaces=false,showstringspaces=false,showtabs=false,
-  breaklines=true,breakatwhitespace=true,escapeinside=<span class="nb">{</span><span class="k">\%*</span><span class="nb">}{</span>*)<span class="nb">}</span>,
+  breaklines=true,breakatwhitespace=true,escapeinside=||,
   keywordstyle=<span class="k">\color</span><span class="nb">{</span>blue!70<span class="nb">}</span>,stringstyle=<span class="k">\color</span><span class="nb">{</span>green!70!black!70<span class="nb">}</span>,
   commentstyle=<span class="k">\color</span><span class="nb">{</span>black!80<span class="nb">}</span><span class="k">\it</span>
 <span class="nb">}</span>
@@ -593,6 +594,8 @@ object Foo <span class="nb">{</span>
 
 <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\uncheckedBox</span><span class="nb">}{</span><span class="k">\ensuremath</span><span class="nb">{</span><span class="k">\square</span><span class="nb">}}</span>
 <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\checkedBox</span><span class="nb">}{</span><span class="k">\ensuremath</span><span class="nb">{</span><span class="k">\text</span><span class="nb">{</span><span class="k">\rlap</span><span class="nb">{</span><span class="k">\checkmark</span><span class="nb">}}</span><span class="k">\square</span><span class="nb">}}</span>
+
+<span class="k">\beamertemplatenavigationsymbolsempty</span>
 
 <span class="k">\expandafter\def\expandafter\insertshorttitle\expandafter</span><span class="nb">{</span><span class="c">%</span>
   <span class="k">\insertshorttitle\hfill</span><span class="c">%</span>
