@@ -78,7 +78,8 @@ introduction to LaTeX.
         <img src=".//gen_snippets/0-title.png" width="100%" style="border: 1px solid #000000"></img>
       </div>
       <div class="col-xs-6">
-        <div class="highlight"><pre><span class="k">\frame</span><span class="nb">{</span><span class="k">\titlepage</span><span class="nb">}</span>
+        <div class="highlight"><pre><span class="nb">{</span><span class="k">\setbeamertemplate</span><span class="nb">{</span>footline<span class="nb">}{}</span><span class="k">\setbeamertemplate</span><span class="nb">{</span>headline<span class="nb">}{}</span><span class="k">\frame</span><span class="nb">{</span><span class="k">\titlepage</span><span class="nb">}}</span>
+<span class="k">\addtocounter</span><span class="nb">{</span>framenumber<span class="nb">}{</span>-1<span class="nb">}</span>
 </pre></div>
 
       </div>
@@ -593,6 +594,8 @@ object Foo <span class="nb">{</span>
 
 <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\uncheckedBox</span><span class="nb">}{</span><span class="k">\ensuremath</span><span class="nb">{</span><span class="k">\square</span><span class="nb">}}</span>
 <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\checkedBox</span><span class="nb">}{</span><span class="k">\ensuremath</span><span class="nb">{</span><span class="k">\text</span><span class="nb">{</span><span class="k">\rlap</span><span class="nb">{</span><span class="k">\checkmark</span><span class="nb">}}</span><span class="k">\square</span><span class="nb">}}</span>
+
+<span class="k">\beamertemplatenavigationsymbolsempty</span>
 
 <span class="k">\expandafter\def\expandafter\insertshorttitle\expandafter</span><span class="nb">{</span><span class="c">%</span>
   <span class="k">\insertshorttitle\hfill</span><span class="c">%</span>
