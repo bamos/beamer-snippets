@@ -52,7 +52,7 @@ and other portions are under the MIT license.
 [npm]: https://www.npmjs.org/
 
 [snippets]: https://github.com/bamos/beamer-snippets/tree/master/snippets
-[preamble]: https://github.com/bamos/beamer-snippets/blob/master/tmpl/preamble.tex
+[preamble]: https://github.com/bamos/beamer-snippets/blob/master/website-templates/preamble.tex
 [gen]: https://github.com/bamos/beamer-snippets/blob/master/generate.py
 [mf]: https://github.com/bamos/beamer-snippets/blob/master/Makefile.slides
 [gf]: https://github.com/bamos/beamer-snippets/blob/master/Gruntfile.js

@@ -9,7 +9,7 @@ from pygments.lexers import TexLexer
 from pygments.formatters import HtmlFormatter
 from subprocess import Popen,PIPE
 
-env = Environment(loader=FileSystemLoader("tmpl"),
+env = Environment(loader=FileSystemLoader("website-templates"),
   block_start_string='~{',block_end_string='}~',
   variable_start_string='~{{', variable_end_string='}}~')
 
@@ -58,7 +58,7 @@ if out[1]:
   print("===Stderr:")
   print(out[1].decode())
 
-with open("tmpl/preamble.tex", "r") as f:
+with open("website-templates/preamble.tex", "r") as f:
   preamble = f.read()
 
 with open(dist_dir+"/"+html_index, "w") as idx_f:
